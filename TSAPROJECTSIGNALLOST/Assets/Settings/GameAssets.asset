@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1bce71e3d4db24681f88cde824ee2d, type: 3}
+  m_Name: GameAssets
+  m_EditorClassIdentifier: 
+  blobPrefab: {fileID: 5411860807869993773, guid: d6b2c923f6d24464d905a69bf872f5f5, type: 3}
+  coinPrefab: {fileID: 7456077703675107473, guid: d70898e1833902846a27cfa9176d978f, type: 3}
+  dronePrefab: {fileID: 8587792313199021582, guid: 538b365f2e68d024aa846c441f40063a, type: 3}
+  stationSegmentPrefab: {fileID: 70849823922788234, guid: 1377a4605775b274db8afd676ebbd2ed, type: 3}
+  popVfx: {fileID: 3864993569628390826, guid: 58eb5d6b8c9814e46af5f3c5a1875890, type: 3}
+  sparkleVfx: {fileID: 8531334638289027322, guid: 1d5825ba6ef72ef4ba551c5fc9fcb238, type: 3}
+  confettiVfx: {fileID: 7203146357131878560, guid: 7317fd2eb7ae4334f9882414bd325ae8, type: 3}
+  vacuumSwirlVfx: {fileID: 511768993926897099, guid: 48cdd4bf120099445b2ab8a9ec2a1633, type: 3}
+  shockwaveVfx: {fileID: 4054504854886293607, guid: bf26063f95fe75f439448c4360c03030, type: 3}
+  lineMaterial: {fileID: 2100000, guid: a5d8db695f1d3f545813294e4eee2966, type: 2}
+  blobMaterial: {fileID: 2100000, guid: c78215ebb76f26d4aa0c2b31cbc40f75, type: 2}
+  skyboxMaterial: {fileID: 2100000, guid: 9dc18f71ee34fb0448a05012161d2cb7, type: 2}
+  glyphMaterial: {fileID: 2100000, guid: be119f784d269924790e45081e297e68, type: 2}
+  tmpGlowMaterial: {fileID: 2100000, guid: 8a05a62a0dc7ec2458a5d6f471513850, type: 2}
+  tmpOutlineMaterial: {fileID: 2100000, guid: 4362cbb84ac036540be987201a701573, type: 2}

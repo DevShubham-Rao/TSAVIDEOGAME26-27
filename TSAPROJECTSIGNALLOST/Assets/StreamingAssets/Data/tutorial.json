@@ -1,0 +1,290 @@
+{
+  "steps": [
+    {
+      "id": "pop_first",
+      "phase": "shift",
+      "speaker": "hale",
+      "text": "Technician. That glowing junk is Static: signal the burst scrambled. Left-click it to pop it.",
+      "target": "blob",
+      "wait_for": "blob_popped",
+      "count": 1,
+      "setup": {
+        "spawn": {
+          "color": "red",
+          "count": 1,
+          "scale": 1.8,
+          "where": "center",
+          "speed": 0.2
+        },
+        "disable": [
+          "spawns",
+          "events"
+        ]
+      },
+      "celebrate": "small",
+      "stamp": "POP!",
+      "praise": "See the bright gem it dropped? That is a data bit, the clean signal hiding inside."
+    },
+    {
+      "id": "pop_three",
+      "phase": "shift",
+      "speaker": "hale",
+      "text": "Pop these three. Every piece of Static is hiding bits.",
+      "target": "cluster",
+      "wait_for": "blob_popped",
+      "count": 3,
+      "setup": {
+        "spawn": {
+          "color": "red",
+          "count": 3,
+          "scale": 1.4,
+          "where": "cluster",
+          "speed": 0.2
+        },
+        "disable": [
+          "spawns",
+          "events"
+        ]
+      },
+      "celebrate": "small",
+      "stamp": "NICE",
+      "praise": "Adequate."
+    },
+    {
+      "id": "sweep_bits",
+      "phase": "shift",
+      "speaker": "hale",
+      "text": "Now SWEEP. Hold the RIGHT mouse button over the bits to suck them into your tank.",
+      "text_toggle": "Now SWEEP. Right-click near the bits to start your vacuum, then move over them.",
+      "target": "bits",
+      "wait_for": "vacuum_held",
+      "count": 3,
+      "setup": {
+        "disable": [
+          "spawns",
+          "events"
+        ]
+      },
+      "celebrate": "small",
+      "stamp": "GOT 'EM!",
+      "praise": "Keep the button held."
+    },
+    {
+      "id": "sort_crunch",
+      "phase": "shift",
+      "speaker": "hale",
+      "text": "SORT: let go of the right button over the RED chute. Red bits go in red. The chutes feed the Compressor, which CRUNCHES bits into data packets for Home Base.",
+      "text_toggle": "SORT: right-click over the RED chute to drop them. The chutes feed the Compressor, which CRUNCHES bits into data packets for Home Base.",
+      "target": "chute:red",
+      "spotlight": true,
+      "radius": 120,
+      "wait_for": "crunch",
+      "count": 1,
+      "setup": {
+        "disable": [
+          "spawns",
+          "events"
+        ],
+        "compressor_capacity": 3
+      },
+      "celebrate": "huge",
+      "stamp": "CRUNCH!!",
+      "praise": "That is a packet. Home Base pays for every one."
+    },
+    {
+      "id": "clock_intro",
+      "phase": "shift",
+      "speaker": "hale",
+      "text": "That is the job. Pop, sweep, sort, crunch. Keep the Relay Chain open: the shift clock is running now.",
+      "target": "clock",
+      "wait_for": "seconds",
+      "count": 4,
+      "setup": {
+        "disable": [
+          "events"
+        ]
+      },
+      "celebrate": "none"
+    },
+    {
+      "id": "night_report",
+      "phase": "night",
+      "speaker": "hale",
+      "text": "End of the shift. Your packets went up the Relay Chain. This is what you earned.",
+      "target": "continue_button",
+      "wait_for": "night_step",
+      "wait_param": "mail",
+      "count": 1,
+      "setup": {
+        "keep_alive": false
+      },
+      "celebrate": "none"
+    },
+    {
+      "id": "night_mail",
+      "phase": "night",
+      "speaker": "hale",
+      "text": "Home Base writes after every shift. Every reply gives you something AND costs you something. Read the fine print, pick one, then continue.",
+      "target": "night_mail",
+      "wait_for": "night_step",
+      "wait_param": "tree",
+      "count": 1,
+      "setup": {
+        "keep_alive": false
+      },
+      "celebrate": "none",
+      "timeout": 240
+    },
+    {
+      "id": "night_tree",
+      "phase": "night",
+      "speaker": "hale",
+      "text": "This is the skill tree: every upgrade lives here. Click Pop Power I to buy it. New nodes appear as you buy the ones next to them. Bought by mistake? Undo tonight.",
+      "target": "node:pop_power_1",
+      "wait_for": "upgrade_bought",
+      "count": 1,
+      "setup": {
+        "keep_alive": false,
+        "ensure_data_for": "pop_power_1"
+      },
+      "celebrate": "none",
+      "timeout": 240
+    },
+    {
+      "id": "night_start",
+      "phase": "night",
+      "speaker": "hale",
+      "text": "Spend the rest how you like. When you are ready, start Day 2.",
+      "target": "start_button",
+      "wait_for": "day_started",
+      "count": 1,
+      "setup": {
+        "keep_alive": false
+      },
+      "celebrate": "none",
+      "timeout": 600
+    }
+  ],
+  "tips": [
+    {
+      "id": "blue_unlock",
+      "trigger": "antenna_reached",
+      "param": "2",
+      "text": "Blue Static: tougher, 4 clicks, but it drops 3 bits. Blue bits go in the BLUE chute.",
+      "target": "chutes",
+      "until": "sorted",
+      "duration": 12,
+      "glow_chutes": true
+    },
+    {
+      "id": "green_unlock",
+      "trigger": "antenna_reached",
+      "param": "4",
+      "text": "Green Static splits into small Static when popped. Pop the pieces too.",
+      "target": "none",
+      "duration": 8
+    },
+    {
+      "id": "wrong_chute",
+      "trigger": "wrong_sort",
+      "text": "Wrong chute. Bits only go down the chute of their own color (Gold bits fit any chute).",
+      "target": "chutes",
+      "duration": 7
+    },
+    {
+      "id": "tank_full",
+      "trigger": "tank_full",
+      "text": "Tank full. Sort them before you sweep more. Tank Size in the tree holds more.",
+      "target": "chutes",
+      "duration": 6
+    },
+    {
+      "id": "last_call",
+      "trigger": "last_call",
+      "text": "Last call! Get your bits into a chute. Bits left on the floor are lost tonight.",
+      "target": "chutes",
+      "duration": 5
+    },
+    {
+      "id": "night_bits_lost",
+      "trigger": "bits_lost",
+      "text": "Bits left on the floor are lost. Night Storage in the Signal branch keeps them.",
+      "target": "none",
+      "duration": 7
+    },
+    {
+      "id": "first_drone",
+      "trigger": "node_bought",
+      "param": "drone_bay_1",
+      "text": "A drone. It carries loose bits to the right chute for you.",
+      "target": "none",
+      "duration": 7
+    },
+    {
+      "id": "universal",
+      "trigger": "node_bought",
+      "param": "universal_chute",
+      "text": "Universal Chute. One chute for every color. No more sorting.",
+      "target": "none",
+      "duration": 7
+    },
+    {
+      "id": "night_open_channel",
+      "trigger": "open_channel_mail",
+      "text": "Open Channel: some mail now has an extra reply. The pink one speaks to the Static.",
+      "target": "none",
+      "duration": 7
+    },
+    {
+      "id": "first_golden",
+      "trigger": "golden_spawn",
+      "text": "GOLD Static: rare, and it runs from you. Pop it for a pile of bits that fit any chute.",
+      "target": "golden",
+      "until": "golden_popped",
+      "duration": 6,
+      "slowmo": 0.5,
+      "slowmo_scale": 0.25
+    },
+    {
+      "id": "event_solar_flare",
+      "trigger": "event",
+      "param": "solar_flare",
+      "text": "Mash SHIELD! Extra time on me.",
+      "until": "event_end"
+    },
+    {
+      "id": "event_power_surge",
+      "trigger": "event",
+      "param": "power_surge",
+      "text": "Repeat the pattern!",
+      "until": "event_end"
+    },
+    {
+      "id": "event_hull_leak",
+      "trigger": "event",
+      "param": "hull_leak",
+      "text": "Click every leak. Fast.",
+      "until": "event_end"
+    },
+    {
+      "id": "event_signal_rush",
+      "trigger": "event",
+      "param": "signal_rush",
+      "text": "Sort them! Colors to chutes!",
+      "until": "event_end"
+    },
+    {
+      "id": "event_golden_swarm",
+      "trigger": "event",
+      "param": "golden_swarm",
+      "text": "Pop all the gold!",
+      "until": "event_end"
+    }
+  ],
+  "nudges": [
+    "Today, Technician.",
+    "The Static will not pop itself.",
+    "Clock is ticking. Well. It will be.",
+    "Home Base is watching. Probably."
+  ]
+}

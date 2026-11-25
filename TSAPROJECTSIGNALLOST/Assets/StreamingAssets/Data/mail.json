@@ -1,0 +1,1534 @@
+{
+  "senders": [
+    {
+      "id": "hale",
+      "name": "Commander Hale",
+      "title": "Home Base Operations. Gruff, busy, hates jokes.",
+      "portrait": "hale",
+      "color": "#7FA8FF"
+    },
+    {
+      "id": "iva",
+      "name": "Dr. Iva Sol",
+      "title": "Home Base Science. Curious, warm, nerdy.",
+      "portrait": "iva",
+      "color": "#3BF0FF"
+    },
+    {
+      "id": "static",
+      "name": "???",
+      "title": "Unknown sender. Speaks in colors and shapes.",
+      "portrait": "static",
+      "color": "#FF4BE1"
+    },
+    {
+      "id": "supply_bot",
+      "name": "Supply Bot",
+      "title": "Automated logistics unit. Very polite.",
+      "portrait": "supply_bot",
+      "color": "#7CFF3B"
+    }
+  ],
+  "messages": [
+    {
+      "id": "story_01",
+      "trigger": {
+        "type": "day",
+        "level": 1
+      },
+      "from": "hale",
+      "subject": "Orders",
+      "body": "Technician. Omega is the last relay on the Chain: everything Home Base sends the survey ships passes through you. The burst jammed your receiver. Crunch the Static into clean packets and I can keep the signal moving.",
+      "replies": [
+        {
+          "text": "On it, Commander.",
+          "hint": "+20% Data tomorrow. Hale expects more every day.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.2
+            }
+          ],
+          "trust": {
+            "hale": 1
+          },
+          "followup": "Good. Less talk, more sweeping."
+        },
+        {
+          "text": "Where did the burst come from?",
+          "hint": "Dr. Sol gets copied in. Tomorrow: {goldx2}. Shift 10 s shorter.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "golden_mult",
+              "amount": 1.0
+            },
+            {
+              "instant": "tomorrow",
+              "value": "shift_seconds",
+              "amount": -10
+            }
+          ],
+          "trust": {
+            "iva": 1
+          },
+          "followup": "Not your concern. ...I'm copying the science team. Happy?"
+        }
+      ]
+    },
+    {
+      "id": "story_02",
+      "trigger": {
+        "type": "day",
+        "level": 2
+      },
+      "from": "iva",
+      "subject": "Your Static has a rhythm",
+      "body": "Hi! Dr. Iva Sol, Home Base Science. Quick explainer: Static is signal the burst scrambled, and bits are the clean data hiding inside it. But yesterday's bits repeat in patterns. That is not noise. Can you sort slower tomorrow?",
+      "replies": [
+        {
+          "text": "Sure, I'll take it slow.",
+          "hint": "Shift 15 s shorter tomorrow. Sol sends you her Data bonus: +40% Data tomorrow.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "shift_seconds",
+              "amount": -15
+            },
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.4
+            }
+          ],
+          "trust": {
+            "iva": 1
+          },
+          "followup": "Thank you! I owe you one. Two, actually."
+        },
+        {
+          "text": "Hale wants speed. Sorry.",
+          "hint": "+25% more Static tomorrow. Sol goes quiet for a while.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "spawn_mult",
+              "amount": 0.25
+            }
+          ],
+          "trust": {
+            "hale": 1,
+            "iva": -1
+          },
+          "followup": "Oh. Okay. Hale says a lot of things."
+        }
+      ]
+    },
+    {
+      "id": "story_03",
+      "trigger": {
+        "type": "day",
+        "level": 3
+      },
+      "from": "hale",
+      "subject": "Budget review",
+      "body": "Numbers are low. I can cut you a bonus now, or send a crew to tune your station. Not both. Pick.",
+      "replies": [
+        {
+          "text": "The bonus, sir.",
+          "hint": "Get 50% of today's earnings right now. Tomorrow 15% less Data while the crew is away.",
+          "effects": [
+            {
+              "instant": "data_days",
+              "amount": 0.5
+            },
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": -0.15
+            }
+          ],
+          "trust": {
+            "hale": 1
+          },
+          "followup": "Spend it well."
+        },
+        {
+          "text": "Send the crew.",
+          "hint": "Tomorrow: +35% Data and 20 s longer shift. No bonus today.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.35
+            },
+            {
+              "instant": "tomorrow",
+              "value": "shift_seconds",
+              "amount": 20
+            }
+          ],
+          "trust": {
+            "hale": 1
+          },
+          "followup": "They'll be there at dawn. Don't touch anything."
+        },
+        {
+          "text": "Can the crew bring Dr. Sol?",
+          "hint": "Tomorrow: {goldx3}, but 20% less Data.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "golden_mult",
+              "amount": 2.0
+            },
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": -0.2
+            }
+          ],
+          "trust": {
+            "iva": 2,
+            "hale": -1
+          },
+          "followup": "Absolutely not. ...Fine. She paid for her own seat."
+        }
+      ]
+    },
+    {
+      "id": "story_04",
+      "trigger": {
+        "type": "day",
+        "level": 4
+      },
+      "from": "static",
+      "subject": "▲●▲",
+      "symbols": true,
+      "body": "▲●▲ ●● ▲",
+      "replies": [
+        {
+          "text": "▲●▲",
+          "symbols": true,
+          "hint": "Answer it. Tomorrow is calm: no events, 25% more Static.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "no_events",
+              "amount": 1
+            },
+            {
+              "instant": "tomorrow",
+              "value": "spawn_mult",
+              "amount": 0.25
+            }
+          ],
+          "trust": {
+            "static": 2
+          },
+          "followup": "●●● ▲"
+        },
+        {
+          "text": "Delete",
+          "hint": "Report it as noise: +30% Data tomorrow. The Static notices.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.3
+            }
+          ],
+          "trust": {
+            "hale": 1,
+            "static": -1
+          }
+        },
+        {
+          "text": "Forward to Dr. Sol",
+          "hint": "Sol studies it. Tomorrow's shift is 15 s shorter while she borrows your dish.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "shift_seconds",
+              "amount": -15
+            },
+            {
+              "buff": "combo_window",
+              "amount": 0.3,
+              "seconds": 600
+            }
+          ],
+          "trust": {
+            "iva": 1
+          },
+          "followup": "▲ ?"
+        }
+      ]
+    },
+    {
+      "id": "story_05",
+      "trigger": {
+        "type": "day",
+        "level": 5
+      },
+      "from": "iva",
+      "subject": "It's a language!",
+      "body": "Every crunch saves a piece of a message. It's compressed, like a zip file. And the Static isn't hurt by popping: it rebuilds inside your Compressor. It keeps coming back because it wants to be heard.",
+      "replies": [
+        {
+          "text": "Then I'll record everything.",
+          "hint": "Tomorrow: crunches pay 30% less (Sol keeps the samples), but {goldx2}.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": -0.3
+            },
+            {
+              "instant": "tomorrow",
+              "value": "golden_mult",
+              "amount": 1.0
+            }
+          ],
+          "trust": {
+            "iva": 2
+          },
+          "followup": "Recording! Oh, this is the best day."
+        },
+        {
+          "text": "I think it is saying hello.",
+          "requires": {
+            "open_channel": 1
+          },
+          "hint": "Talk back. Tomorrow: no events, and Static drop more bits in a long combo window.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "no_events",
+              "amount": 1
+            },
+            {
+              "buff": "combo_window",
+              "amount": 0.5,
+              "seconds": 600
+            }
+          ],
+          "trust": {
+            "iva": 1,
+            "static": 2
+          },
+          "followup": "Hello back, little blobs. Hello!"
+        },
+        {
+          "text": "Not my job.",
+          "hint": "Get 40% of today's earnings now. Sol stops sending research.",
+          "effects": [
+            {
+              "instant": "data_days",
+              "amount": 0.4
+            }
+          ],
+          "trust": {
+            "hale": 1,
+            "iva": -1
+          },
+          "followup": "...Okay. I'll do it myself, then."
+        }
+      ]
+    },
+    {
+      "id": "story_06",
+      "trigger": {
+        "type": "day",
+        "level": 6
+      },
+      "from": "hale",
+      "subject": "Direct order",
+      "body": "Dr. Sol has been feeding you theories. Block her channel. That's an order.",
+      "replies": [
+        {
+          "text": "Understood. Blocking her.",
+          "hint": "Hale approves a bigger budget: +40% Data tomorrow. Sol goes silent for good.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.4
+            }
+          ],
+          "trust": {
+            "hale": 2,
+            "iva": -2
+          },
+          "followup": "Good."
+        },
+        {
+          "text": "She's onto something. Hear her out.",
+          "hint": "Sol shares a decoder: {goldx2} tomorrow. Hale cuts tomorrow's shift by 20 s.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "golden_mult",
+              "amount": 1.0
+            },
+            {
+              "instant": "tomorrow",
+              "value": "shift_seconds",
+              "amount": -20
+            }
+          ],
+          "trust": {
+            "iva": 2,
+            "hale": -1
+          },
+          "followup": "Noted. Disapprovingly."
+        },
+        {
+          "text": "▲●▲",
+          "symbols": true,
+          "requires": {
+            "open_channel": 1
+          },
+          "hint": "Ask the Static instead. Tomorrow: no events, 25% more Static. Both humans grow suspicious.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "no_events",
+              "amount": 1
+            },
+            {
+              "instant": "tomorrow",
+              "value": "spawn_mult",
+              "amount": 0.25
+            }
+          ],
+          "trust": {
+            "static": 2,
+            "hale": -1,
+            "iva": -1
+          },
+          "followup": "...Who are you talking to, technician?"
+        }
+      ]
+    },
+    {
+      "id": "story_07",
+      "trigger": {
+        "type": "day",
+        "level": 8
+      },
+      "from": "static",
+      "subject": "●▲●",
+      "symbols": true,
+      "body": "●▲● ▲▲ ★ ?",
+      "replies": [
+        {
+          "text": "★",
+          "symbols": true,
+          "hint": "Say yes. Tomorrow: {goldx3}, 20 s shorter shift.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "golden_mult",
+              "amount": 2.0
+            },
+            {
+              "instant": "tomorrow",
+              "value": "shift_seconds",
+              "amount": -20
+            }
+          ],
+          "trust": {
+            "static": 2
+          },
+          "followup": "★ ★"
+        },
+        {
+          "text": "▲▲▲",
+          "symbols": true,
+          "hint": "Say wait. Tomorrow: +30% Data, but {nogold}.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.3
+            },
+            {
+              "instant": "tomorrow",
+              "value": "golden_mult",
+              "amount": -1.0
+            }
+          ],
+          "trust": {
+            "static": 1
+          },
+          "followup": "▲▲▲ ●"
+        },
+        {
+          "text": "Report to Hale",
+          "hint": "Hale lends you 3 drones tomorrow. The Static goes quiet.",
+          "effects": [
+            {
+              "buff": "extra_drones",
+              "amount": 3,
+              "seconds": 600
+            }
+          ],
+          "trust": {
+            "hale": 1,
+            "static": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "story_08",
+      "trigger": {
+        "type": "day",
+        "level": 10
+      },
+      "from": "iva",
+      "subject": "We need to decide",
+      "body": "Hale plans to wipe the channel for good when the signal hits 100%. If he does, the message is gone forever. I need to know where you stand.",
+      "replies": [
+        {
+          "text": "I'll finish the job.",
+          "hint": "Side with Hale. +30% Data tomorrow.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.3
+            }
+          ],
+          "trust": {
+            "hale": 2
+          },
+          "followup": "I understand. I don't like it, but I understand."
+        },
+        {
+          "text": "Let's translate it first.",
+          "hint": "Side with Sol. Tomorrow 20 s shorter while you help decode.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "shift_seconds",
+              "amount": -20
+            }
+          ],
+          "trust": {
+            "iva": 2
+          },
+          "followup": "Thank you. Firing up the decoder."
+        },
+        {
+          "text": "What if I let it speak for itself?",
+          "hint": "Side with the Static. Tomorrow: 25% more Static, no events.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "spawn_mult",
+              "amount": 0.25
+            },
+            {
+              "instant": "tomorrow",
+              "value": "no_events",
+              "amount": 1
+            }
+          ],
+          "trust": {
+            "static": 2
+          },
+          "followup": "...Let it speak? Be careful out there."
+        }
+      ]
+    },
+    {
+      "id": "story_09",
+      "trigger": {
+        "type": "day",
+        "level": 12
+      },
+      "from": "hale",
+      "subject": "Final push",
+      "body": "Final push. Get me 100% and you're promoted. And technician: whatever Sol told you, it's interference. Nothing more.",
+      "replies": [
+        {
+          "text": "Yes, sir.",
+          "hint": "+50% Data tomorrow.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.5
+            }
+          ],
+          "trust": {
+            "hale": 1
+          },
+          "followup": "That's what I like to hear."
+        },
+        {
+          "text": "I want a raise, too.",
+          "hint": "+100% Data tomorrow. Hale will remember this.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 1.0
+            }
+          ],
+          "trust": {
+            "hale": -2
+          },
+          "followup": "Fine. FINE. Just get it done."
+        },
+        {
+          "text": "Then why does it keep answering me?",
+          "hint": "Hale has no answer. Tomorrow: no events, {goldx2}.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "no_events",
+              "amount": 1
+            },
+            {
+              "instant": "tomorrow",
+              "value": "golden_mult",
+              "amount": 1.0
+            }
+          ],
+          "trust": {
+            "iva": 1,
+            "static": 1,
+            "hale": -1
+          },
+          "followup": "...Get it done, technician."
+        }
+      ]
+    },
+    {
+      "id": "story_10",
+      "trigger": {
+        "type": "antenna",
+        "level": 10
+      },
+      "from": "static",
+      "subject": "100%",
+      "body": "( Every piece of Static on screen freezes. One by one they drift into place, forming a single enormous shape. The signal is at 100%. Hale's wipe command is armed. Dr. Sol's decoder is open. Something is waiting for you. )",
+      "replies": [
+        {
+          "text": "...Listen.",
+          "effects": [
+            {
+              "instant": "ending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flavor_01",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 0
+      },
+      "from": "hale",
+      "subject": "Camera feed",
+      "body": "Your drone is waving at the camera. Make it stop.",
+      "replies": [
+        {
+          "text": "It's morale, sir.",
+          "effects": [
+            {
+              "buff": "drone_speed",
+              "amount": 0.3,
+              "seconds": 120
+            }
+          ],
+          "followup": "Morale is not a line item."
+        },
+        {
+          "text": "Done.",
+          "effects": [
+            {
+              "buff": "click_data",
+              "amount": 0.3,
+              "seconds": 120
+            }
+          ],
+          "followup": "Good."
+        }
+      ]
+    },
+    {
+      "id": "flavor_02",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 0
+      },
+      "from": "iva",
+      "subject": "Fun fact",
+      "body": "Fun fact: blue Static is 2 degrees warmer than red. Weird, right?",
+      "replies": [
+        {
+          "text": "Weird!",
+          "effects": [
+            {
+              "buff": "luck",
+              "amount": 2,
+              "seconds": 120
+            }
+          ],
+          "followup": "SO weird. I love it."
+        },
+        {
+          "text": "Cool.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.15
+            }
+          ],
+          "followup": "Literally! Ha."
+        }
+      ]
+    },
+    {
+      "id": "flavor_03",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 0
+      },
+      "from": "supply_bot",
+      "subject": "Delivery: snacks",
+      "body": "Your space snacks have arrived. Please rate them 1 to 5.",
+      "replies": [
+        {
+          "text": "5",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.25,
+              "seconds": 120
+            }
+          ],
+          "followup": "Thank you! Supply Bot is happy."
+        },
+        {
+          "text": "1",
+          "effects": [
+            {
+              "buff": "crunch_payout",
+              "amount": 0.6,
+              "seconds": 120
+            }
+          ],
+          "followup": "Supply Bot is sad. Supply Bot will crunch harder."
+        }
+      ]
+    },
+    {
+      "id": "flavor_04",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 0
+      },
+      "from": "hale",
+      "subject": "Paperwork",
+      "body": "Form 27-B is overdue. Three lines. Numbers only.",
+      "replies": [
+        {
+          "text": "Sent. 3 lines.",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.3,
+              "seconds": 120
+            }
+          ],
+          "followup": "Efficient. Keep it up."
+        },
+        {
+          "text": "What's a 27-B?",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.15
+            }
+          ],
+          "followup": "Look it up."
+        }
+      ]
+    },
+    {
+      "id": "flavor_05",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 0
+      },
+      "from": "iva",
+      "subject": "Question!",
+      "body": "Do the green ones hop because they're excited, or nervous?",
+      "replies": [
+        {
+          "text": "Excited. Definitely excited.",
+          "effects": [
+            {
+              "buff": "combo_window",
+              "amount": 0.2,
+              "seconds": 150
+            }
+          ],
+          "followup": "Same energy as me reading your reports."
+        },
+        {
+          "text": "No idea, honestly.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.15
+            }
+          ],
+          "followup": "Honest! I respect that."
+        }
+      ]
+    },
+    {
+      "id": "flavor_06",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 0
+      },
+      "from": "supply_bot",
+      "subject": "Maintenance",
+      "body": "Scheduled maintenance: would you like the Compressor polished or the vacuum tuned?",
+      "replies": [
+        {
+          "text": "Polish the Compressor.",
+          "effects": [
+            {
+              "buff": "crunch_payout",
+              "amount": 0.5,
+              "seconds": 150
+            }
+          ],
+          "followup": "Polished to a mirror shine."
+        },
+        {
+          "text": "Tune the vacuum.",
+          "effects": [
+            {
+              "buff": "click_data",
+              "amount": 0.35,
+              "seconds": 150
+            }
+          ],
+          "followup": "Vacuum tuned. It purrs now."
+        }
+      ]
+    },
+    {
+      "id": "flavor_07",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 1
+      },
+      "from": "hale",
+      "subject": "Budget",
+      "body": "Accounting wants a projection. One number. Go.",
+      "replies": [
+        {
+          "text": "Up 200% by Friday.",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.4,
+              "seconds": 120
+            }
+          ],
+          "followup": "I'll hold you to that."
+        },
+        {
+          "text": "Depends on the blobs, sir.",
+          "effects": [
+            {
+              "buff": "luck",
+              "amount": 2,
+              "seconds": 120
+            }
+          ],
+          "followup": "Everything depends on the blobs."
+        }
+      ]
+    },
+    {
+      "id": "flavor_08",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 1
+      },
+      "from": "iva",
+      "subject": "Look at this",
+      "body": "I put a recording of the Static through a speaker and my plant leaned toward it. Thoughts?",
+      "replies": [
+        {
+          "text": "What frequency were you playing?",
+          "effects": [
+            {
+              "buff": "sort_mult",
+              "amount": 1.5,
+              "seconds": 150
+            }
+          ],
+          "followup": "88 Hz! You ask the BEST questions."
+        },
+        {
+          "text": "Plants do that.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.15
+            }
+          ],
+          "followup": "Do they? DO they?"
+        }
+      ]
+    },
+    {
+      "id": "flavor_09",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 1
+      },
+      "from": "supply_bot",
+      "subject": "Package",
+      "body": "A package has arrived. It is humming. Shall I open it?",
+      "replies": [
+        {
+          "text": "Open it!",
+          "effects": [
+            {
+              "instant": "golden_hour",
+              "amount": 8
+            }
+          ],
+          "followup": "It was full of gold. Supply Bot is confused but pleased."
+        },
+        {
+          "text": "Leave it closed.",
+          "effects": [
+            {
+              "buff": "golden_chance",
+              "amount": 0.01,
+              "seconds": 180
+            }
+          ],
+          "followup": "It hums louder. Supply Bot will keep an eye on it."
+        }
+      ]
+    },
+    {
+      "id": "flavor_10",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 2
+      },
+      "from": "hale",
+      "subject": "Inspection",
+      "body": "Inspection drone arrives tomorrow. Make the station look like a station.",
+      "replies": [
+        {
+          "text": "Already spotless.",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.35,
+              "seconds": 150
+            }
+          ],
+          "followup": "We'll see."
+        },
+        {
+          "text": "Can the blobs stay?",
+          "effects": [
+            {
+              "buff": "luck",
+              "amount": 3,
+              "seconds": 120
+            }
+          ],
+          "followup": "No."
+        }
+      ]
+    },
+    {
+      "id": "flavor_11",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 2
+      },
+      "from": "iva",
+      "subject": "Theory #14",
+      "body": "Theory: the gold ones are the Static's way of saying thank you. Have you noticed more since you started being nice?",
+      "replies": [
+        {
+          "text": "Now that you say it... yes!",
+          "effects": [
+            {
+              "buff": "golden_chance",
+              "amount": 0.01,
+              "seconds": 180
+            }
+          ],
+          "followup": "Science!!"
+        },
+        {
+          "text": "I'm just clicking.",
+          "effects": [
+            {
+              "buff": "click_data",
+              "amount": 0.3,
+              "seconds": 120
+            }
+          ],
+          "followup": "That's what they all say."
+        }
+      ]
+    },
+    {
+      "id": "flavor_12",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 2
+      },
+      "from": "supply_bot",
+      "subject": "Survey",
+      "body": "Customer survey: How would you describe your drones? A) Friends B) Tools",
+      "replies": [
+        {
+          "text": "A) Friends",
+          "effects": [
+            {
+              "buff": "drone_speed",
+              "amount": 0.4,
+              "seconds": 150
+            }
+          ],
+          "followup": "Your drones have been informed. They are thrilled."
+        },
+        {
+          "text": "B) Tools",
+          "effects": [
+            {
+              "buff": "extra_drones",
+              "amount": 2,
+              "seconds": 90
+            }
+          ],
+          "followup": "Two more tools dispatched. Temporarily."
+        }
+      ]
+    },
+    {
+      "id": "flavor_13",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 3
+      },
+      "from": "hale",
+      "subject": "Coffee",
+      "body": "Shipment of coffee is delayed. Do not complain about it.",
+      "replies": [
+        {
+          "text": "Wasn't going to.",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.4,
+              "seconds": 150
+            }
+          ],
+          "followup": "Good."
+        },
+        {
+          "text": "I'm complaining a little.",
+          "effects": [
+            {
+              "buff": "combo_window",
+              "amount": 0.25,
+              "seconds": 120
+            }
+          ],
+          "followup": "Noted. Ignored."
+        }
+      ]
+    },
+    {
+      "id": "flavor_14",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 3
+      },
+      "from": "iva",
+      "subject": "Can you try something?",
+      "body": "Next time you crunch a full Compressor, can you tell me if it sounds like a chord?",
+      "replies": [
+        {
+          "text": "It's a minor chord. Always.",
+          "effects": [
+            {
+              "buff": "crunch_payout",
+              "amount": 0.75,
+              "seconds": 150
+            }
+          ],
+          "followup": "A MINOR CHORD. Writing that down."
+        },
+        {
+          "text": "It sounds like a crunch.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.15
+            }
+          ],
+          "followup": "Fair. Very fair."
+        }
+      ]
+    },
+    {
+      "id": "flavor_15",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 3
+      },
+      "from": "supply_bot",
+      "subject": "Error",
+      "body": "ERROR: Supply Bot has delivered 400 rubber ducks instead of 4 replacement fuses. Keep them?",
+      "replies": [
+        {
+          "text": "Keep the ducks.",
+          "effects": [
+            {
+              "buff": "luck",
+              "amount": 3,
+              "seconds": 150
+            }
+          ],
+          "followup": "The ducks are watching the Static. It seems calmer."
+        },
+        {
+          "text": "Send them back.",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.3,
+              "seconds": 120
+            }
+          ],
+          "followup": "Fuses incoming. The ducks will be missed."
+        }
+      ]
+    },
+    {
+      "id": "flavor_16",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 4
+      },
+      "from": "static",
+      "subject": "●",
+      "body": "● ● ●",
+      "symbols": true,
+      "replies": [
+        {
+          "text": "● ● ●",
+          "symbols": true,
+          "effects": [
+            {
+              "buff": "sort_mult",
+              "amount": 1.6,
+              "seconds": 150
+            }
+          ],
+          "followup": "● ★"
+        },
+        {
+          "text": "▲",
+          "symbols": true,
+          "effects": [
+            {
+              "buff": "golden_chance",
+              "amount": 0.01,
+              "seconds": 150
+            }
+          ],
+          "followup": "▲ ▲ ?"
+        }
+      ]
+    },
+    {
+      "id": "flavor_17",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 4
+      },
+      "from": "hale",
+      "subject": "Competitor",
+      "body": "Relay Station Theta is beating your numbers. Fix that.",
+      "replies": [
+        {
+          "text": "Theta is going down.",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.5,
+              "seconds": 150
+            }
+          ],
+          "followup": "That's the spirit. Quietly."
+        },
+        {
+          "text": "Good for Theta.",
+          "effects": [
+            {
+              "buff": "luck",
+              "amount": 2,
+              "seconds": 150
+            }
+          ],
+          "followup": "No. Not good for Theta."
+        }
+      ]
+    },
+    {
+      "id": "flavor_18",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 5
+      },
+      "from": "iva",
+      "subject": "Late night",
+      "body": "Can't sleep. Listening to your Static feed. Is it weird that it's soothing?",
+      "replies": [
+        {
+          "text": "Not weird. It hums like a lullaby.",
+          "effects": [
+            {
+              "buff": "combo_window",
+              "amount": 0.3,
+              "seconds": 180
+            }
+          ],
+          "followup": "A lullaby. Yes. Goodnight, technician."
+        },
+        {
+          "text": "A little weird.",
+          "effects": [
+            {
+              "instant": "tomorrow",
+              "value": "data_mult",
+              "amount": 0.15
+            }
+          ],
+          "followup": "Ha! Probably."
+        }
+      ]
+    },
+    {
+      "id": "flavor_19",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 5
+      },
+      "from": "supply_bot",
+      "subject": "Upgrade offer",
+      "body": "Supply Bot can overclock your drones for 3 minutes. Warranty void. Proceed?",
+      "replies": [
+        {
+          "text": "Proceed.",
+          "effects": [
+            {
+              "buff": "drone_speed",
+              "amount": 0.6,
+              "seconds": 180
+            }
+          ],
+          "followup": "Overclocked. Supply Bot did not see anything."
+        },
+        {
+          "text": "Keep the warranty.",
+          "effects": [
+            {
+              "buff": "extra_drones",
+              "amount": 2,
+              "seconds": 120
+            }
+          ],
+          "followup": "Loaner drones dispatched instead."
+        }
+      ]
+    },
+    {
+      "id": "flavor_20",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 6
+      },
+      "from": "static",
+      "subject": "★",
+      "body": "★ ● ★",
+      "symbols": true,
+      "replies": [
+        {
+          "text": "★ ● ★",
+          "symbols": true,
+          "effects": [
+            {
+              "instant": "golden_hour",
+              "amount": 10
+            }
+          ],
+          "followup": "★ ★ ★ ★"
+        },
+        {
+          "text": "●",
+          "symbols": true,
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.5,
+              "seconds": 120
+            }
+          ],
+          "followup": "● ?"
+        }
+      ]
+    },
+    {
+      "id": "flavor_21",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 6
+      },
+      "from": "hale",
+      "subject": "Rumor",
+      "body": "Heard you named one of the blobs. Tell me that's not true.",
+      "replies": [
+        {
+          "text": "That is not true, sir.",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.6,
+              "seconds": 150
+            }
+          ],
+          "followup": "Good."
+        },
+        {
+          "text": "His name is Gary.",
+          "effects": [
+            {
+              "buff": "luck",
+              "amount": 4,
+              "seconds": 150
+            }
+          ],
+          "followup": "...Of course it is."
+        }
+      ]
+    },
+    {
+      "id": "flavor_22",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 7
+      },
+      "from": "iva",
+      "subject": "Vocabulary",
+      "body": "I think triangle means 'here' and circle means 'us'. So what does the star mean?",
+      "replies": [
+        {
+          "text": "Maybe it means 'home'?",
+          "effects": [
+            {
+              "buff": "sort_mult",
+              "amount": 2,
+              "seconds": 180
+            }
+          ],
+          "followup": "Home. Oh. Oh, that's beautiful."
+        },
+        {
+          "text": "Gold?",
+          "effects": [
+            {
+              "buff": "golden_chance",
+              "amount": 0.015,
+              "seconds": 150
+            }
+          ],
+          "followup": "Ha! Maybe that too."
+        }
+      ]
+    },
+    {
+      "id": "flavor_23",
+      "trigger": {
+        "type": "flavor",
+        "min_antenna": 7
+      },
+      "from": "supply_bot",
+      "subject": "Farewell?",
+      "body": "Rumor says the signal will be 100% soon. Will Supply Bot still be needed?",
+      "replies": [
+        {
+          "text": "Always, Supply Bot.",
+          "effects": [
+            {
+              "buff": "all_data",
+              "amount": 0.75,
+              "seconds": 150
+            }
+          ],
+          "followup": "Supply Bot is very happy. Supply Bot is crying oil."
+        },
+        {
+          "text": "Probably not.",
+          "effects": [
+            {
+              "buff": "crunch_payout",
+              "amount": 1.0,
+              "seconds": 150
+            }
+          ],
+          "followup": "Supply Bot understands. Supply Bot will crunch with honor."
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "id": "clear_channel",
+      "name": "Clear Channel",
+      "trust": "hale",
+      "tint": "#7FA8FF",
+      "cards": [
+        "You run the final sweep. The Static thins, flickers... and is gone.",
+        "The channel is clean. Silent. Not a single blob drifts past the window.",
+        "COMMANDER HALE: \"Good work. Promotion approved.\"",
+        "Relay Station Omega hums alone at the edge of known space. It is very, very quiet."
+      ]
+    },
+    {
+      "id": "first_contact",
+      "name": "First Contact",
+      "trust": "iva",
+      "tint": "#3BF0FF",
+      "cards": [
+        "Dr. Sol runs every pattern you recorded through her decoder.",
+        "The blobs stop drifting. They pulse, all at once, in rhythm.",
+        "The message resolves on every screen at Home Base:",
+        "\"WE ARE LOST TOO.\"",
+        "Humanity makes first contact. The sky over Omega fills with fireworks of every blob color."
+      ]
+    },
+    {
+      "id": "become_signal",
+      "name": "Become the Signal",
+      "trust": "static",
+      "tint": "#FF4BE1",
+      "cards": [
+        "You stop sweeping. You just... listen.",
+        "The blobs swarm the station, warm and humming, and lift it gently off the moon.",
+        "Relay Station Omega drifts into a glowing nebula. You are part of the signal now.",
+        "★★★"
+      ]
+    }
+  ],
+  "briefings": [
+    {
+      "day": 1,
+      "from": "hale",
+      "text": "HALE: Pop it. Sweep it. Sort it. Crunch it. Go."
+    },
+    {
+      "day": 2,
+      "from": "hale",
+      "text": "HALE: Yesterday was a warm-up. Today counts."
+    },
+    {
+      "day": 3,
+      "from": "iva",
+      "text": "SOL: Keep an eye on the patterns. They're changing."
+    },
+    {
+      "day": 4,
+      "from": "hale",
+      "text": "HALE: Something pinged the dish overnight. Ignore it."
+    },
+    {
+      "day": 5,
+      "from": "static",
+      "text": "▲ ● ▲"
+    },
+    {
+      "day": 6,
+      "from": "iva",
+      "text": "SOL: Every crunch is a sentence. Keep them coming."
+    },
+    {
+      "day": 7,
+      "from": "hale",
+      "text": "HALE: Halfway there. Do not get sentimental."
+    },
+    {
+      "day": 8,
+      "from": "static",
+      "text": "● ▲ ●"
+    },
+    {
+      "day": 9,
+      "from": "iva",
+      "text": "SOL: The decoder caught a whole word last night."
+    },
+    {
+      "day": 10,
+      "from": "hale",
+      "text": "HALE: Signal is climbing. Good. Keep it that way."
+    },
+    {
+      "day": 11,
+      "from": "iva",
+      "text": "SOL: I don't think it's a warning. I think it's a greeting."
+    },
+    {
+      "day": 12,
+      "from": "static",
+      "text": "▲ ?"
+    },
+    {
+      "day": 13,
+      "from": "hale",
+      "text": "HALE: The wipe is ready. Finish the climb."
+    },
+    {
+      "day": 14,
+      "from": "iva",
+      "text": "SOL: Whatever you choose, I'm glad it was you out there."
+    },
+    {
+      "day": 15,
+      "from": "static",
+      "text": "▲ ▲ ▲"
+    }
+  ]
+}

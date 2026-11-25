@@ -1,0 +1,3004 @@
+[
+ {
+  "id": "core",
+  "name": "Relay Station Omega",
+  "desc": "Your station. Everything grows from here.",
+  "branch": "center",
+  "col": 0,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 0,
+  "growth": 1.0,
+  "effects": [],
+  "display": "unlock",
+  "requires": [],
+  "star": false,
+  "icon": "antenna"
+ },
+ {
+  "id": "pop_power_1",
+  "name": "Pop Power I",
+  "desc": "Pop tough Static in fewer clicks.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 38,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "click_power",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "core"
+  ],
+  "star": false,
+  "icon": "pop"
+ },
+ {
+  "id": "pop_power_2",
+  "name": "Pop Power II",
+  "desc": "Pop tough Static in fewer clicks.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 120,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "click_power",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "pop_power_1"
+  ],
+  "star": false,
+  "icon": "pop"
+ },
+ {
+  "id": "pop_power_3",
+  "name": "Pop Power III",
+  "desc": "Pop tough Static in fewer clicks.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 380,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "click_power",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "pop_power_2"
+  ],
+  "star": false,
+  "icon": "pop"
+ },
+ {
+  "id": "pop_power_4",
+  "name": "Pop Power IV",
+  "desc": "Pop tough Static in fewer clicks.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 1100,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "click_power",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "pop_power_3"
+  ],
+  "star": false,
+  "icon": "pop"
+ },
+ {
+  "id": "pop_power_5",
+  "name": "Pop Power V",
+  "desc": "Pop tough Static in fewer clicks.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 3300,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "click_power",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "pop_power_4"
+  ],
+  "star": false,
+  "icon": "pop"
+ },
+ {
+  "id": "pop_area_1",
+  "name": "Pop Area I",
+  "desc": "Each click also squishes Static right next to it.",
+  "branch": "pop",
+  "col": -1.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 140,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "pop_area",
+    "per_level": 0.35,
+    "mode": "add"
+   }
+  ],
+  "display": "meters",
+  "requires": [
+   "pop_power_1"
+  ],
+  "star": false,
+  "icon": "spark"
+ },
+ {
+  "id": "pop_area_2",
+  "name": "Pop Area II",
+  "desc": "Each click also squishes Static right next to it.",
+  "branch": "pop",
+  "col": -1.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 450,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "pop_area",
+    "per_level": 0.35,
+    "mode": "add"
+   }
+  ],
+  "display": "meters",
+  "requires": [
+   "pop_area_1"
+  ],
+  "star": false,
+  "icon": "spark"
+ },
+ {
+  "id": "pop_area_3",
+  "name": "Pop Area III",
+  "desc": "Each click also squishes Static right next to it.",
+  "branch": "pop",
+  "col": -1.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 1400,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "pop_area",
+    "per_level": 0.35,
+    "mode": "add"
+   }
+  ],
+  "display": "meters",
+  "requires": [
+   "pop_area_2"
+  ],
+  "star": false,
+  "icon": "spark"
+ },
+ {
+  "id": "crit_pop_1",
+  "name": "Crit Pop I",
+  "desc": "Chance for a click to pop instantly and drop 3x bits.",
+  "branch": "pop",
+  "col": 0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 160,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "crit_chance",
+    "per_level": 0.04,
+    "mode": "add"
+   }
+  ],
+  "display": "percent",
+  "requires": [
+   "pop_power_1"
+  ],
+  "star": false,
+  "icon": "clicker"
+ },
+ {
+  "id": "crit_pop_2",
+  "name": "Crit Pop II",
+  "desc": "Chance for a click to pop instantly and drop 3x bits.",
+  "branch": "pop",
+  "col": 0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 570,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "crit_chance",
+    "per_level": 0.04,
+    "mode": "add"
+   }
+  ],
+  "display": "percent",
+  "requires": [
+   "crit_pop_1"
+  ],
+  "star": false,
+  "icon": "clicker"
+ },
+ {
+  "id": "crit_pop_3",
+  "name": "Crit Pop III",
+  "desc": "Chance for a click to pop instantly and drop 3x bits.",
+  "branch": "pop",
+  "col": 0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 1800,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "crit_chance",
+    "per_level": 0.04,
+    "mode": "add"
+   }
+  ],
+  "display": "percent",
+  "requires": [
+   "crit_pop_2"
+  ],
+  "star": false,
+  "icon": "clicker"
+ },
+ {
+  "id": "crit_pop_4",
+  "name": "Crit Pop IV",
+  "desc": "Chance for a click to pop instantly and drop 3x bits.",
+  "branch": "pop",
+  "col": 0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 5400,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "crit_chance",
+    "per_level": 0.04,
+    "mode": "add"
+   }
+  ],
+  "display": "percent",
+  "requires": [
+   "crit_pop_3"
+  ],
+  "star": false,
+  "icon": "clicker"
+ },
+ {
+  "id": "combo_window_1",
+  "name": "Combo Window I",
+  "desc": "More time to keep a pop streak going.",
+  "branch": "pop",
+  "col": -1.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "combo_window",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "pop_area_3"
+  ],
+  "star": false,
+  "icon": "combo_window"
+ },
+ {
+  "id": "combo_window_2",
+  "name": "Combo Window II",
+  "desc": "More time to keep a pop streak going.",
+  "branch": "pop",
+  "col": -1.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 1800,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "combo_window",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "combo_window_1"
+  ],
+  "star": false,
+  "icon": "combo_window"
+ },
+ {
+  "id": "combo_window_3",
+  "name": "Combo Window III",
+  "desc": "More time to keep a pop streak going.",
+  "branch": "pop",
+  "col": -1.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 5200,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "combo_window",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "combo_window_2"
+  ],
+  "star": false,
+  "icon": "combo_window"
+ },
+ {
+  "id": "chain_spark",
+  "name": "Chain Spark",
+  "desc": "Popping Static sparks to a neighbor of the same color.",
+  "branch": "pop",
+  "col": -1.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 7500,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "chain_pop",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "combo_window_3"
+  ],
+  "star": true,
+  "icon": "spark"
+ },
+ {
+  "id": "shockwave_pop",
+  "name": "Shockwave Pop",
+  "desc": "Every 25th click pops everything within 2 m.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 14000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "shockwave",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "pop_power_5"
+  ],
+  "star": true,
+  "icon": "speed"
+ },
+ {
+  "id": "auto_pop_tower_1",
+  "name": "Auto-Pop Tower I",
+  "desc": "The station pops one Static every 3 s for you. Each tower pops faster.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 27000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "auto_pop",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "shockwave_pop"
+  ],
+  "star": true,
+  "icon": "clicker"
+ },
+ {
+  "id": "auto_pop_tower_2",
+  "name": "Auto-Pop Tower II",
+  "desc": "The station pops one Static every 3 s for you. Each tower pops faster.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 68000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "auto_pop",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "auto_pop_tower_1"
+  ],
+  "star": false,
+  "icon": "clicker"
+ },
+ {
+  "id": "auto_pop_tower_3",
+  "name": "Auto-Pop Tower III",
+  "desc": "The station pops one Static every 3 s for you. Each tower pops faster.",
+  "branch": "pop",
+  "col": -0.5,
+  "row": 8,
+  "max_level": 1,
+  "base_cost": 160000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "auto_pop",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "auto_pop_tower_2"
+  ],
+  "star": false,
+  "icon": "clicker"
+ },
+ {
+  "id": "tank_size_1",
+  "name": "Tank Size I",
+  "desc": "Your vacuum holds more Data bits.",
+  "branch": "sweep",
+  "col": -0.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 45,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_capacity",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "core"
+  ],
+  "star": false,
+  "icon": "capacity"
+ },
+ {
+  "id": "tank_size_2",
+  "name": "Tank Size II",
+  "desc": "Your vacuum holds more Data bits.",
+  "branch": "sweep",
+  "col": -0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 140,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_capacity",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "tank_size_1"
+  ],
+  "star": false,
+  "icon": "capacity"
+ },
+ {
+  "id": "tank_size_3",
+  "name": "Tank Size III",
+  "desc": "Your vacuum holds more Data bits.",
+  "branch": "sweep",
+  "col": -0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 400,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_capacity",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "tank_size_2"
+  ],
+  "star": false,
+  "icon": "capacity"
+ },
+ {
+  "id": "tank_size_4",
+  "name": "Tank Size IV",
+  "desc": "Your vacuum holds more Data bits.",
+  "branch": "sweep",
+  "col": -0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 1200,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_capacity",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "tank_size_3"
+  ],
+  "star": false,
+  "icon": "capacity"
+ },
+ {
+  "id": "tank_size_5",
+  "name": "Tank Size V",
+  "desc": "Your vacuum holds more Data bits.",
+  "branch": "sweep",
+  "col": -0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 3600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_capacity",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "tank_size_4"
+  ],
+  "star": false,
+  "icon": "capacity"
+ },
+ {
+  "id": "suction_radius_1",
+  "name": "Suction Radius I",
+  "desc": "Pull bits in from farther away.",
+  "branch": "sweep",
+  "col": -1.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 100,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_radius",
+    "per_level": 0.3,
+    "mode": "add"
+   }
+  ],
+  "display": "meters",
+  "requires": [
+   "tank_size_1"
+  ],
+  "star": false,
+  "icon": "radius"
+ },
+ {
+  "id": "suction_radius_2",
+  "name": "Suction Radius II",
+  "desc": "Pull bits in from farther away.",
+  "branch": "sweep",
+  "col": -1.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 330,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_radius",
+    "per_level": 0.3,
+    "mode": "add"
+   }
+  ],
+  "display": "meters",
+  "requires": [
+   "suction_radius_1"
+  ],
+  "star": false,
+  "icon": "radius"
+ },
+ {
+  "id": "suction_radius_3",
+  "name": "Suction Radius III",
+  "desc": "Pull bits in from farther away.",
+  "branch": "sweep",
+  "col": -1.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 1000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_radius",
+    "per_level": 0.3,
+    "mode": "add"
+   }
+  ],
+  "display": "meters",
+  "requires": [
+   "suction_radius_2"
+  ],
+  "star": false,
+  "icon": "radius"
+ },
+ {
+  "id": "suction_radius_4",
+  "name": "Suction Radius IV",
+  "desc": "Pull bits in from farther away.",
+  "branch": "sweep",
+  "col": -1.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 3000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_radius",
+    "per_level": 0.3,
+    "mode": "add"
+   }
+  ],
+  "display": "meters",
+  "requires": [
+   "suction_radius_3"
+  ],
+  "star": false,
+  "icon": "radius"
+ },
+ {
+  "id": "sweep_speed_1",
+  "name": "Sweep Speed I",
+  "desc": "Bits fly into your tank faster.",
+  "branch": "sweep",
+  "col": 0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 120,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "sweep_speed",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "tank_size_1"
+  ],
+  "star": false,
+  "icon": "speed"
+ },
+ {
+  "id": "sweep_speed_2",
+  "name": "Sweep Speed II",
+  "desc": "Bits fly into your tank faster.",
+  "branch": "sweep",
+  "col": 0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 390,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "sweep_speed",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "sweep_speed_1"
+  ],
+  "star": false,
+  "icon": "speed"
+ },
+ {
+  "id": "sweep_speed_3",
+  "name": "Sweep Speed III",
+  "desc": "Bits fly into your tank faster.",
+  "branch": "sweep",
+  "col": 0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 1200,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "sweep_speed",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "sweep_speed_2"
+  ],
+  "star": false,
+  "icon": "speed"
+ },
+ {
+  "id": "sweep_speed_4",
+  "name": "Sweep Speed IV",
+  "desc": "Bits fly into your tank faster.",
+  "branch": "sweep",
+  "col": 0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 3600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "sweep_speed",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "sweep_speed_3"
+  ],
+  "star": false,
+  "icon": "speed"
+ },
+ {
+  "id": "bit_magnet_1",
+  "name": "Bit Magnet I",
+  "desc": "Loose bits slowly roll toward their own chute.",
+  "branch": "sweep",
+  "col": 0.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 520,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "bit_magnet",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "sweep_speed_4"
+  ],
+  "star": false,
+  "icon": "magnet"
+ },
+ {
+  "id": "bit_magnet_2",
+  "name": "Bit Magnet II",
+  "desc": "Loose bits slowly roll toward their own chute.",
+  "branch": "sweep",
+  "col": 0.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 1600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "bit_magnet",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "bit_magnet_1"
+  ],
+  "star": false,
+  "icon": "magnet"
+ },
+ {
+  "id": "bit_magnet_3",
+  "name": "Bit Magnet III",
+  "desc": "Loose bits slowly roll toward their own chute.",
+  "branch": "sweep",
+  "col": 0.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 5100,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "bit_magnet",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "bit_magnet_2"
+  ],
+  "star": false,
+  "icon": "magnet"
+ },
+ {
+  "id": "magnet_pulse",
+  "name": "Magnet Pulse",
+  "desc": "Every 10 s, every loose bit jumps 2 m toward its chute.",
+  "branch": "sweep",
+  "col": -1.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 6800,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "magnet_pulse",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "suction_radius_4"
+  ],
+  "star": true,
+  "icon": "magnet"
+ },
+ {
+  "id": "universal_chute",
+  "name": "Universal Chute",
+  "desc": "Merges the three chutes into one that takes every color.",
+  "branch": "sweep",
+  "col": -0.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 14000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "universal_chute",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "tank_size_5"
+  ],
+  "star": true,
+  "icon": "sort"
+ },
+ {
+  "id": "wide_nozzle",
+  "name": "Wide Nozzle",
+  "desc": "A much wider vacuum: +60% suction radius.",
+  "branch": "sweep",
+  "col": -1.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 9000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "vacuum_radius",
+    "per_level": 0.6,
+    "mode": "pct"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "magnet_pulse"
+  ],
+  "star": true,
+  "icon": "suction"
+ },
+ {
+  "id": "crunch_bonus_1",
+  "name": "Crunch Bonus I",
+  "desc": "Every crunch pays more.",
+  "branch": "station",
+  "col": -0.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 68,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "core"
+  ],
+  "star": false,
+  "icon": "crunch"
+ },
+ {
+  "id": "crunch_bonus_2",
+  "name": "Crunch Bonus II",
+  "desc": "Every crunch pays more.",
+  "branch": "station",
+  "col": -0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 240,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "crunch_bonus_1"
+  ],
+  "star": false,
+  "icon": "crunch"
+ },
+ {
+  "id": "crunch_bonus_3",
+  "name": "Crunch Bonus III",
+  "desc": "Every crunch pays more.",
+  "branch": "station",
+  "col": -0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 780,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "crunch_bonus_2"
+  ],
+  "star": false,
+  "icon": "crunch"
+ },
+ {
+  "id": "crunch_bonus_4",
+  "name": "Crunch Bonus IV",
+  "desc": "Every crunch pays more.",
+  "branch": "station",
+  "col": -0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 2600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "crunch_bonus_3"
+  ],
+  "star": false,
+  "icon": "crunch"
+ },
+ {
+  "id": "crunch_bonus_5",
+  "name": "Crunch Bonus V",
+  "desc": "Every crunch pays more.",
+  "branch": "station",
+  "col": -0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 7800,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "crunch_bonus_4"
+  ],
+  "star": false,
+  "icon": "crunch"
+ },
+ {
+  "id": "crunch_bonus_6",
+  "name": "Crunch Bonus VI",
+  "desc": "Every crunch pays more.",
+  "branch": "station",
+  "col": -0.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 24000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "crunch_bonus_5"
+  ],
+  "star": false,
+  "icon": "crunch"
+ },
+ {
+  "id": "crunch_speed_1",
+  "name": "Crunch Speed I",
+  "desc": "The Compressor winds up and swallows bits faster.",
+  "branch": "station",
+  "col": -1.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 180,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "crunch_speed",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "crunch_bonus_1"
+  ],
+  "star": false,
+  "icon": "speed"
+ },
+ {
+  "id": "crunch_speed_2",
+  "name": "Crunch Speed II",
+  "desc": "The Compressor winds up and swallows bits faster.",
+  "branch": "station",
+  "col": -1.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "crunch_speed",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "crunch_speed_1"
+  ],
+  "star": false,
+  "icon": "speed"
+ },
+ {
+  "id": "crunch_speed_3",
+  "name": "Crunch Speed III",
+  "desc": "The Compressor winds up and swallows bits faster.",
+  "branch": "station",
+  "col": -1.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 2000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "crunch_speed",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "crunch_speed_2"
+  ],
+  "star": false,
+  "icon": "speed"
+ },
+ {
+  "id": "compressor_size_1",
+  "name": "Compressor Size I",
+  "desc": "Holds more bits before it crunches.",
+  "branch": "station",
+  "col": -1.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 240,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_size",
+    "per_level": 5,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "crunch_speed_3"
+  ],
+  "star": false,
+  "icon": "compressor"
+ },
+ {
+  "id": "compressor_size_2",
+  "name": "Compressor Size II",
+  "desc": "Holds more bits before it crunches.",
+  "branch": "station",
+  "col": -1.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 750,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_size",
+    "per_level": 5,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "compressor_size_1"
+  ],
+  "star": false,
+  "icon": "compressor"
+ },
+ {
+  "id": "compressor_size_3",
+  "name": "Compressor Size III",
+  "desc": "Holds more bits before it crunches.",
+  "branch": "station",
+  "col": -1.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 2400,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_size",
+    "per_level": 5,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "compressor_size_2"
+  ],
+  "star": false,
+  "icon": "compressor"
+ },
+ {
+  "id": "compressor_size_4",
+  "name": "Compressor Size IV",
+  "desc": "Holds more bits before it crunches.",
+  "branch": "station",
+  "col": -1.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 7500,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "compressor_size",
+    "per_level": 5,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "compressor_size_3"
+  ],
+  "star": false,
+  "icon": "compressor"
+ },
+ {
+  "id": "auto_feed",
+  "name": "Auto-Feed",
+  "desc": "The Compressor crunches by itself at 80% full.",
+  "branch": "station",
+  "col": -1.5,
+  "row": 8,
+  "max_level": 1,
+  "base_cost": 5200,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "auto_feed",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "compressor_size_4"
+  ],
+  "star": true,
+  "icon": "compressor"
+ },
+ {
+  "id": "drone_bay_1",
+  "name": "Drone Bay I",
+  "desc": "A sweeper drone that carries bits to the right chute.",
+  "branch": "station",
+  "col": 0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_count",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "crunch_bonus_1"
+  ],
+  "star": true,
+  "icon": "drone"
+ },
+ {
+  "id": "drone_bay_2",
+  "name": "Drone Bay II",
+  "desc": "A sweeper drone that carries bits to the right chute.",
+  "branch": "station",
+  "col": 0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 2000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_count",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "drone_bay_1"
+  ],
+  "star": false,
+  "icon": "drone"
+ },
+ {
+  "id": "drone_bay_3",
+  "name": "Drone Bay III",
+  "desc": "A sweeper drone that carries bits to the right chute.",
+  "branch": "station",
+  "col": 0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 6300,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_count",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "drone_bay_2"
+  ],
+  "star": false,
+  "icon": "drone"
+ },
+ {
+  "id": "drone_speed_1",
+  "name": "Drone Speed I",
+  "desc": "Drones fly and grab faster.",
+  "branch": "station",
+  "col": 0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 680,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_speed",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "drone_bay_3"
+  ],
+  "star": false,
+  "icon": "drone_speed"
+ },
+ {
+  "id": "drone_speed_2",
+  "name": "Drone Speed II",
+  "desc": "Drones fly and grab faster.",
+  "branch": "station",
+  "col": 0.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 2100,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_speed",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "drone_speed_1"
+  ],
+  "star": false,
+  "icon": "drone_speed"
+ },
+ {
+  "id": "drone_speed_3",
+  "name": "Drone Speed III",
+  "desc": "Drones fly and grab faster.",
+  "branch": "station",
+  "col": 0.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 6800,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_speed",
+    "per_level": 0.2,
+    "mode": "add"
+   }
+  ],
+  "display": "mult",
+  "requires": [
+   "drone_speed_2"
+  ],
+  "star": false,
+  "icon": "drone_speed"
+ },
+ {
+  "id": "overclock",
+  "name": "Overclock",
+  "desc": "The last 15 s of every shift, drones and the Compressor run twice as fast.",
+  "branch": "station",
+  "col": 0.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 18000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "overclock",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "drone_speed_3"
+  ],
+  "star": true,
+  "icon": "overclock"
+ },
+ {
+  "id": "drone_tank_1",
+  "name": "Drone Tank I",
+  "desc": "Each drone carries more bits per trip.",
+  "branch": "station",
+  "col": 1.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 820,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_tank",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "drone_bay_2"
+  ],
+  "star": false,
+  "icon": "capacity"
+ },
+ {
+  "id": "drone_tank_2",
+  "name": "Drone Tank II",
+  "desc": "Each drone carries more bits per trip.",
+  "branch": "station",
+  "col": 1.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 2600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_tank",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "drone_tank_1"
+  ],
+  "star": false,
+  "icon": "capacity"
+ },
+ {
+  "id": "drone_tank_3",
+  "name": "Drone Tank III",
+  "desc": "Each drone carries more bits per trip.",
+  "branch": "station",
+  "col": 1.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 8100,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_tank",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "drone_tank_2"
+  ],
+  "star": false,
+  "icon": "capacity"
+ },
+ {
+  "id": "jackpot_crunch",
+  "name": "Jackpot Crunch",
+  "desc": "Each crunch has a 5% chance to pay 10x.",
+  "branch": "station",
+  "col": -0.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 45000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "jackpot_chance",
+    "per_level": 0.05,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "crunch_bonus_6"
+  ],
+  "star": true,
+  "icon": "gold"
+ },
+ {
+  "id": "overtime_1",
+  "name": "Overtime I",
+  "desc": "Every shift lasts 15 s longer.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 60,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "shift_seconds",
+    "per_level": 15,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "core"
+  ],
+  "star": false,
+  "icon": "rhythm"
+ },
+ {
+  "id": "overtime_2",
+  "name": "Overtime II",
+  "desc": "Every shift lasts 15 s longer.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 200,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "shift_seconds",
+    "per_level": 15,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "overtime_1"
+  ],
+  "star": false,
+  "icon": "rhythm"
+ },
+ {
+  "id": "overtime_3",
+  "name": "Overtime III",
+  "desc": "Every shift lasts 15 s longer.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 630,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "shift_seconds",
+    "per_level": 15,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "overtime_2"
+  ],
+  "star": false,
+  "icon": "rhythm"
+ },
+ {
+  "id": "overtime_4",
+  "name": "Overtime IV",
+  "desc": "Every shift lasts 15 s longer.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 2000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "shift_seconds",
+    "per_level": 15,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "overtime_3"
+  ],
+  "star": false,
+  "icon": "rhythm"
+ },
+ {
+  "id": "overtime_5",
+  "name": "Overtime V",
+  "desc": "Every shift lasts 15 s longer.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 6000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "shift_seconds",
+    "per_level": 15,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "overtime_4"
+  ],
+  "star": false,
+  "icon": "rhythm"
+ },
+ {
+  "id": "antenna_1",
+  "name": "Antenna I",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 600,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "overtime_2"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_2",
+  "name": "Antenna II",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 1300,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_1"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_3",
+  "name": "Antenna III",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 2900,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_2"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_4",
+  "name": "Antenna IV",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 6400,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_3"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_5",
+  "name": "Antenna V",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 14000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_4"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_6",
+  "name": "Antenna VI",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 31000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_5"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_7",
+  "name": "Antenna VII",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 68000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_6"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_8",
+  "name": "Antenna VIII",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 150000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_7"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_9",
+  "name": "Antenna IX",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 8,
+  "max_level": 1,
+  "base_cost": 330000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_8"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "antenna_10",
+  "name": "Antenna X",
+  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "branch": "signal",
+  "col": -0.5,
+  "row": 9,
+  "max_level": 1,
+  "base_cost": 720000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "antenna",
+    "per_level": 1,
+    "mode": "add"
+   },
+   {
+    "stat": "antenna_data_mult",
+    "per_level": 0.5,
+    "mode": "mult"
+   },
+   {
+    "stat": "signal_strength",
+    "per_level": 0.1,
+    "mode": "add"
+   }
+  ],
+  "display": "level",
+  "requires": [
+   "antenna_9"
+  ],
+  "star": false,
+  "icon": "antenna",
+  "display_stat": "antenna"
+ },
+ {
+  "id": "static_density_1",
+  "name": "Static Density I",
+  "desc": "More Static on screen each shift.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 380,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "spawn_rate",
+    "per_level": 0.15,
+    "mode": "add"
+   },
+   {
+    "stat": "max_blobs",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "overtime_3"
+  ],
+  "star": false,
+  "icon": "pop",
+  "display_stat": "max_blobs"
+ },
+ {
+  "id": "static_density_2",
+  "name": "Static Density II",
+  "desc": "More Static on screen each shift.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 1200,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "spawn_rate",
+    "per_level": 0.15,
+    "mode": "add"
+   },
+   {
+    "stat": "max_blobs",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "static_density_1"
+  ],
+  "star": false,
+  "icon": "pop",
+  "display_stat": "max_blobs"
+ },
+ {
+  "id": "static_density_3",
+  "name": "Static Density III",
+  "desc": "More Static on screen each shift.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 3800,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "spawn_rate",
+    "per_level": 0.15,
+    "mode": "add"
+   },
+   {
+    "stat": "max_blobs",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "static_density_2"
+  ],
+  "star": false,
+  "icon": "pop",
+  "display_stat": "max_blobs"
+ },
+ {
+  "id": "static_density_4",
+  "name": "Static Density IV",
+  "desc": "More Static on screen each shift.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 8,
+  "max_level": 1,
+  "base_cost": 12000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "spawn_rate",
+    "per_level": 0.15,
+    "mode": "add"
+   },
+   {
+    "stat": "max_blobs",
+    "per_level": 2,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "static_density_3"
+  ],
+  "star": false,
+  "icon": "pop",
+  "display_stat": "max_blobs"
+ },
+ {
+  "id": "night_storage",
+  "name": "Night Storage",
+  "desc": "Bits left on the floor or in your tank carry over to the next day.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 9,
+  "max_level": 1,
+  "base_cost": 9000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "night_storage",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "static_density_3"
+  ],
+  "star": true,
+  "icon": "capacity"
+ },
+ {
+  "id": "event_rewards_1",
+  "name": "Event Rewards I",
+  "desc": "Puzzle events pay more.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 10,
+  "max_level": 1,
+  "base_cost": 450,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "event_reward_pct",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "night_storage"
+  ],
+  "star": false,
+  "icon": "shield"
+ },
+ {
+  "id": "event_rewards_2",
+  "name": "Event Rewards II",
+  "desc": "Puzzle events pay more.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 11,
+  "max_level": 1,
+  "base_cost": 1500,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "event_reward_pct",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "event_rewards_1"
+  ],
+  "star": false,
+  "icon": "shield"
+ },
+ {
+  "id": "event_rewards_3",
+  "name": "Event Rewards III",
+  "desc": "Puzzle events pay more.",
+  "branch": "signal",
+  "col": -1.5,
+  "row": 12,
+  "max_level": 1,
+  "base_cost": 4800,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "event_reward_pct",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "event_rewards_2"
+  ],
+  "star": false,
+  "icon": "shield"
+ },
+ {
+  "id": "data_value_1",
+  "name": "Data Value I",
+  "desc": "+12% Data from every crunch.",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 450,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.12,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "antenna_1"
+  ],
+  "star": false,
+  "icon": "all_data"
+ },
+ {
+  "id": "data_value_2",
+  "name": "Data Value II",
+  "desc": "+12% Data from every crunch.",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 1500,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.12,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "data_value_1"
+  ],
+  "star": false,
+  "icon": "all_data"
+ },
+ {
+  "id": "data_value_3",
+  "name": "Data Value III",
+  "desc": "+12% Data from every crunch.",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 4800,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.12,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "data_value_2"
+  ],
+  "star": false,
+  "icon": "all_data"
+ },
+ {
+  "id": "data_value_4",
+  "name": "Data Value IV",
+  "desc": "+12% Data from every crunch.",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 15000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.12,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "data_value_3"
+  ],
+  "star": false,
+  "icon": "all_data"
+ },
+ {
+  "id": "data_value_5",
+  "name": "Data Value V",
+  "desc": "+12% Data from every crunch.",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 48000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.12,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "data_value_4"
+  ],
+  "star": false,
+  "icon": "all_data"
+ },
+ {
+  "id": "data_value_6",
+  "name": "Data Value VI",
+  "desc": "+12% Data from every crunch.",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 150000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.12,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "data_value_5"
+  ],
+  "star": false,
+  "icon": "all_data"
+ },
+ {
+  "id": "golden_chance_1",
+  "name": "Golden Chance I",
+  "desc": "Gold Static shows up more often (found from Antenna 3).",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 1000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "golden_chance_pct",
+    "per_level": 0.5,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "data_value_3"
+  ],
+  "star": false,
+  "icon": "golden_chance"
+ },
+ {
+  "id": "golden_chance_2",
+  "name": "Golden Chance II",
+  "desc": "Gold Static shows up more often (found from Antenna 3).",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 8,
+  "max_level": 1,
+  "base_cost": 3300,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "golden_chance_pct",
+    "per_level": 0.5,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "golden_chance_1"
+  ],
+  "star": false,
+  "icon": "golden_chance"
+ },
+ {
+  "id": "golden_chance_3",
+  "name": "Golden Chance III",
+  "desc": "Gold Static shows up more often (found from Antenna 3).",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 9,
+  "max_level": 1,
+  "base_cost": 10000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "golden_chance_pct",
+    "per_level": 0.5,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "golden_chance_2"
+  ],
+  "star": false,
+  "icon": "golden_chance"
+ },
+ {
+  "id": "golden_chance_4",
+  "name": "Golden Chance IV",
+  "desc": "Gold Static shows up more often (found from Antenna 3).",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 10,
+  "max_level": 1,
+  "base_cost": 33000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "golden_chance_pct",
+    "per_level": 0.5,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "golden_chance_3"
+  ],
+  "star": false,
+  "icon": "golden_chance"
+ },
+ {
+  "id": "lucky_shift",
+  "name": "Lucky Shift",
+  "desc": "Each day has a 25% chance to be a Lucky Shift: twice the Gold Static.",
+  "branch": "signal",
+  "col": 0.5,
+  "row": 11,
+  "max_level": 1,
+  "base_cost": 22000,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "lucky_shift",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "golden_chance_2"
+  ],
+  "star": true,
+  "icon": "lucky"
+ },
+ {
+  "id": "open_channel",
+  "name": "Open Channel",
+  "desc": "Unlocks an extra reply in story mail: talk to the Static.",
+  "branch": "signal",
+  "col": 1.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 2700,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "open_channel",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "antenna_3"
+  ],
+  "star": true,
+  "icon": "mail"
+ },
+ {
+  "id": "head_start_1",
+  "name": "Head Start I",
+  "desc": "Start every run with 150 more Data.",
+  "branch": "deep",
+  "col": -1.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 2,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "start_data",
+    "per_level": 150,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [],
+  "star": false,
+  "icon": "coin",
+  "deep": true
+ },
+ {
+  "id": "head_start_2",
+  "name": "Head Start II",
+  "desc": "Start every run with 150 more Data.",
+  "branch": "deep",
+  "col": -1.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 3,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "start_data",
+    "per_level": 150,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "head_start_1"
+  ],
+  "star": false,
+  "icon": "coin",
+  "deep": true
+ },
+ {
+  "id": "head_start_3",
+  "name": "Head Start III",
+  "desc": "Start every run with 150 more Data.",
+  "branch": "deep",
+  "col": -1.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 4,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "start_data",
+    "per_level": 150,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "head_start_2"
+  ],
+  "star": false,
+  "icon": "coin",
+  "deep": true
+ },
+ {
+  "id": "veteran_hands_1",
+  "name": "Veteran Hands I",
+  "desc": "+50% Pop Power.",
+  "branch": "deep",
+  "col": -0.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 3,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "click_power",
+    "per_level": 0.5,
+    "mode": "pct"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [],
+  "star": false,
+  "icon": "clicker",
+  "deep": true,
+  "display_stat": "click_power"
+ },
+ {
+  "id": "veteran_hands_2",
+  "name": "Veteran Hands II",
+  "desc": "+50% Pop Power.",
+  "branch": "deep",
+  "col": -0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 4,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "click_power",
+    "per_level": 0.5,
+    "mode": "pct"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "veteran_hands_1"
+  ],
+  "star": false,
+  "icon": "clicker",
+  "deep": true,
+  "display_stat": "click_power"
+ },
+ {
+  "id": "veteran_hands_3",
+  "name": "Veteran Hands III",
+  "desc": "+50% Pop Power.",
+  "branch": "deep",
+  "col": -0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 5,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "click_power",
+    "per_level": 0.5,
+    "mode": "pct"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "veteran_hands_2"
+  ],
+  "star": false,
+  "icon": "clicker",
+  "deep": true,
+  "display_stat": "click_power"
+ },
+ {
+  "id": "long_shift_1",
+  "name": "Long Shift I",
+  "desc": "+30 s on every shift.",
+  "branch": "deep",
+  "col": 0.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 3,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "shift_seconds",
+    "per_level": 30,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [],
+  "star": false,
+  "icon": "rhythm",
+  "deep": true
+ },
+ {
+  "id": "long_shift_2",
+  "name": "Long Shift II",
+  "desc": "+30 s on every shift.",
+  "branch": "deep",
+  "col": 0.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 5,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "shift_seconds",
+    "per_level": 30,
+    "mode": "add"
+   }
+  ],
+  "display": "seconds",
+  "requires": [
+   "long_shift_1"
+  ],
+  "star": false,
+  "icon": "rhythm",
+  "deep": true
+ },
+ {
+  "id": "night_crew_1",
+  "name": "Night Crew I",
+  "desc": "Start Day 1 with a drone.",
+  "branch": "deep",
+  "col": 1.5,
+  "row": 0,
+  "max_level": 1,
+  "base_cost": 4,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_count",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [],
+  "star": false,
+  "icon": "drone",
+  "deep": true
+ },
+ {
+  "id": "night_crew_2",
+  "name": "Night Crew II",
+  "desc": "Start Day 1 with a drone.",
+  "branch": "deep",
+  "col": 1.5,
+  "row": 1,
+  "max_level": 1,
+  "base_cost": 6,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "drone_count",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "int",
+  "requires": [
+   "night_crew_1"
+  ],
+  "star": false,
+  "icon": "drone",
+  "deep": true
+ },
+ {
+  "id": "echo_amplifier_1",
+  "name": "Echo Amplifier I",
+  "desc": "+25% all Data.",
+  "branch": "deep",
+  "col": -1.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 2,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "head_start_2"
+  ],
+  "star": false,
+  "icon": "all_data",
+  "deep": true
+ },
+ {
+  "id": "echo_amplifier_2",
+  "name": "Echo Amplifier II",
+  "desc": "+25% all Data.",
+  "branch": "deep",
+  "col": -1.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 3,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "echo_amplifier_1"
+  ],
+  "star": false,
+  "icon": "all_data",
+  "deep": true
+ },
+ {
+  "id": "echo_amplifier_3",
+  "name": "Echo Amplifier III",
+  "desc": "+25% all Data.",
+  "branch": "deep",
+  "col": -1.5,
+  "row": 5,
+  "max_level": 1,
+  "base_cost": 4,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "echo_amplifier_2"
+  ],
+  "star": false,
+  "icon": "all_data",
+  "deep": true
+ },
+ {
+  "id": "echo_amplifier_4",
+  "name": "Echo Amplifier IV",
+  "desc": "+25% all Data.",
+  "branch": "deep",
+  "col": -1.5,
+  "row": 6,
+  "max_level": 1,
+  "base_cost": 6,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "echo_amplifier_3"
+  ],
+  "star": false,
+  "icon": "all_data",
+  "deep": true
+ },
+ {
+  "id": "echo_amplifier_5",
+  "name": "Echo Amplifier V",
+  "desc": "+25% all Data.",
+  "branch": "deep",
+  "col": -1.5,
+  "row": 7,
+  "max_level": 1,
+  "base_cost": 8,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "data_mult",
+    "per_level": 0.25,
+    "mode": "add"
+   }
+  ],
+  "display": "bonus_pct",
+  "requires": [
+   "echo_amplifier_4"
+  ],
+  "star": false,
+  "icon": "all_data",
+  "deep": true
+ },
+ {
+  "id": "prism_static",
+  "name": "Prism Static",
+  "desc": "A fifth Static type whose bits fit any chute and pay big.",
+  "branch": "deep",
+  "col": 0.5,
+  "row": 2,
+  "max_level": 1,
+  "base_cost": 6,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "prism_unlock",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [
+   "long_shift_2"
+  ],
+  "star": true,
+  "icon": "star",
+  "deep": true
+ },
+ {
+  "id": "memory_clear_channel",
+  "name": "Clear Channel Memory",
+  "desc": "Puzzle events can no longer fail. Unlocked by Hale's ending.",
+  "branch": "deep",
+  "col": -0.5,
+  "row": 3,
+  "max_level": 1,
+  "base_cost": 5,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "events_never_fail",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [],
+  "star": true,
+  "icon": "shield",
+  "deep": true,
+  "unlock": {
+   "antenna": 0,
+   "ending": "clear_channel"
+  }
+ },
+ {
+  "id": "memory_first_contact",
+  "name": "First Contact Memory",
+  "desc": "Every story mail gets the extra reply. Unlocked by Dr. Sol's ending.",
+  "branch": "deep",
+  "col": 0.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 5,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "open_channel",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [],
+  "star": true,
+  "icon": "charm",
+  "deep": true,
+  "unlock": {
+   "antenna": 0,
+   "ending": "first_contact"
+  }
+ },
+ {
+  "id": "memory_become_signal",
+  "name": "Become the Signal Memory",
+  "desc": "Every popped Static drops 1 extra bit. Unlocked by the Static's ending.",
+  "branch": "deep",
+  "col": 1.5,
+  "row": 4,
+  "max_level": 1,
+  "base_cost": 5,
+  "growth": 1.0,
+  "effects": [
+   {
+    "stat": "bits_per_pop",
+    "per_level": 1,
+    "mode": "add"
+   }
+  ],
+  "display": "unlock",
+  "requires": [],
+  "star": true,
+  "icon": "spark",
+  "deep": true,
+  "unlock": {
+   "antenna": 0,
+   "ending": "become_signal"
+  }
+ }
+]

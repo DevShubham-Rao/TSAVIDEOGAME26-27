@@ -1,0 +1,127 @@
+[
+  {
+    "id": "solar_flare",
+    "name": "Solar Flare",
+    "type": "environmental",
+    "puzzle": "mash",
+    "unlock_antenna": 1,
+    "base_time": 5.0,
+    "warning": "SOLAR FLARE!",
+    "instructions": "MASH THE SHIELD!  (click it, or tap SPACE)",
+    "warning_sound": "alarm",
+    "tint": "#FF8A3B",
+    "weight": 1.0,
+    "params": {
+      "presses_base": 20,
+      "presses_per_antenna": 5
+    },
+    "reward": {
+      "kind": "buff",
+      "buff": "all_data",
+      "amount": 1.0,
+      "seconds": 30
+    },
+    "fail": {
+      "kind": "freeze_blobs",
+      "seconds": 3
+    }
+  },
+  {
+    "id": "power_surge",
+    "name": "Power Surge",
+    "type": "logical",
+    "puzzle": "sequence",
+    "unlock_antenna": 2,
+    "base_time": 8.0,
+    "warning": "POWER SURGE!",
+    "instructions": "TAP THE WIRES IN THE SAME ORDER",
+    "warning_sound": "alarm",
+    "tint": "#3BF0FF",
+    "weight": 1.0,
+    "params": {
+      "sequence_min": 3,
+      "sequence_max": 6,
+      "node_count": 6,
+      "show_step": 0.45
+    },
+    "reward": {
+      "kind": "data_seconds",
+      "amount": 60
+    },
+    "fail": {
+      "kind": "drone_pause",
+      "seconds": 5
+    }
+  },
+  {
+    "id": "hull_leak",
+    "name": "Hull Leak",
+    "type": "environmental",
+    "puzzle": "patch",
+    "unlock_antenna": 3,
+    "base_time": 7.0,
+    "warning": "HULL LEAK!",
+    "instructions": "CLICK EVERY LEAK TO PATCH IT",
+    "warning_sound": "alarm",
+    "tint": "#3BC8FF",
+    "weight": 1.0,
+    "params": {
+      "leaks_min": 3,
+      "leaks_max": 5,
+      "stat_point_every": 3
+    },
+    "reward": {
+      "kind": "data_seconds",
+      "amount": 30
+    },
+    "fail": {
+      "kind": "combo_reset"
+    }
+  },
+  {
+    "id": "signal_rush",
+    "name": "Signal Rush",
+    "type": "logical",
+    "puzzle": "rush",
+    "unlock_antenna": 4,
+    "base_time": 12.0,
+    "warning": "INCOMING!",
+    "instructions": "SWEEP THE BITS INTO THEIR CHUTES!  (5x CRUNCH DATA)",
+    "warning_sound": "alarm",
+    "tint": "#7CFF3B",
+    "weight": 1.0,
+    "params": {
+      "blob_count": 24,
+      "sort_mult": 5,
+      "success_sorts": 10
+    },
+    "reward": {
+      "kind": "none"
+    },
+    "fail": {
+      "kind": "none"
+    }
+  },
+  {
+    "id": "golden_swarm",
+    "name": "Golden Swarm",
+    "type": "bonus",
+    "puzzle": "swarm",
+    "unlock_antenna": 6,
+    "base_time": 6.0,
+    "warning": "GOLDEN SWARM!",
+    "instructions": "POP EVERY GOLDEN BLOB!",
+    "warning_sound": "golden",
+    "tint": "#FFD23B",
+    "weight": 0.8,
+    "params": {
+      "blob_count": 15
+    },
+    "reward": {
+      "kind": "none"
+    },
+    "fail": {
+      "kind": "none"
+    }
+  }
+]

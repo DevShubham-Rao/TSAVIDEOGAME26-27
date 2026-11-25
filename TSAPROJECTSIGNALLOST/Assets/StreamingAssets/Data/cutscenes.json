@@ -1,0 +1,151 @@
+{
+  "cutscenes": [
+    {
+      "id": "intro",
+      "shots": [
+        {
+          "seconds": 4.6,
+          "pitch": 8,
+          "yaw": -35,
+          "distance": 30,
+          "look_height": 4,
+          "blend_seconds": 0.1,
+          "speaker": "narrator",
+          "line": "Relay Station Omega: the last link in the Relay Chain, a line of stations that carries Home Base's signal out to the survey ships beyond the edge.",
+          "action": "dark"
+        },
+        {
+          "seconds": 3.6,
+          "pitch": 12,
+          "yaw": -10,
+          "distance": 20,
+          "look_height": 3,
+          "blend_seconds": 2.2,
+          "speaker": "narrator",
+          "line": "One technician keeps it running. You."
+        },
+        {
+          "seconds": 3.8,
+          "pitch": 4,
+          "yaw": 20,
+          "distance": 14,
+          "look_height": 5,
+          "blend_seconds": 2.5,
+          "speaker": "narrator",
+          "line": "03:12 station time. A burst from deep space hits the dish.",
+          "action": "flash"
+        },
+        {
+          "seconds": 4.2,
+          "pitch": 12,
+          "yaw": 10,
+          "distance": 16,
+          "look_height": 3,
+          "blend_seconds": 1.0,
+          "speaker": "narrator",
+          "line": "The receiver overloads and spits out glowing Static: signal the burst has scrambled.",
+          "action": "flood",
+          "count": 28
+        },
+        {
+          "seconds": 2.6,
+          "pitch": 18,
+          "yaw": -8,
+          "distance": 18,
+          "look_height": 2,
+          "blend_seconds": 1.2,
+          "action": "alarm"
+        },
+        {
+          "seconds": 5.0,
+          "pitch": 26,
+          "yaw": 0,
+          "distance": 22,
+          "look_height": 1,
+          "blend_seconds": 1.5,
+          "speaker": "hale",
+          "line": "Technician, wake up. Omega is jammed. If the Relay Chain goes dark, every survey ship past the edge goes deaf.",
+          "action": "light"
+        },
+        {
+          "seconds": 5.6,
+          "pitch": 22,
+          "yaw": 0,
+          "distance": 20,
+          "look_height": 0.05,
+          "blend_seconds": 1.2,
+          "speaker": "hale",
+          "line": "Pop the Static and its clean data bits spill out. Sweep them up, sort them, crunch them into packets I can pass on. Move."
+        }
+      ]
+    },
+    {
+      "id": "midpoint",
+      "shots": [
+        {
+          "seconds": 3.0,
+          "pitch": 14,
+          "yaw": -20,
+          "distance": 24,
+          "look_height": 3,
+          "blend_seconds": 1.2,
+          "speaker": "narrator",
+          "line": "Signal at 50%. The Static stops moving.",
+          "action": "freeze_shape"
+        },
+        {
+          "seconds": 4.0,
+          "pitch": 30,
+          "yaw": 15,
+          "distance": 26,
+          "look_height": 2,
+          "blend_seconds": 2.0,
+          "speaker": "static",
+          "line": "▲●▲  ●●  ▲"
+        },
+        {
+          "seconds": 4.5,
+          "pitch": 26,
+          "yaw": 0,
+          "distance": 22,
+          "look_height": 1,
+          "blend_seconds": 1.2,
+          "speaker": "iva",
+          "line": "The decoder got it! First full word: HELLO. It's saying hello. To you.",
+          "action": "flash"
+        },
+        {
+          "seconds": 4.0,
+          "pitch": 24,
+          "yaw": -6,
+          "distance": 21,
+          "look_height": 1,
+          "blend_seconds": 1.0,
+          "speaker": "hale",
+          "line": "It's interference shaped like a word. Back to work, technician."
+        },
+        {
+          "seconds": 4.0,
+          "pitch": 24,
+          "yaw": 6,
+          "distance": 21,
+          "look_height": 1,
+          "blend_seconds": 1.0,
+          "speaker": "iva",
+          "line": "Hale, it rebuilds itself every time we crunch it. It wants to be heard!"
+        },
+        {
+          "seconds": 3.0,
+          "pitch": 22,
+          "yaw": 0,
+          "distance": 20,
+          "look_height": 0.05,
+          "blend_seconds": 1.2,
+          "speaker": "narrator",
+          "line": "The shape breaks apart. Soon, someone will ask you to choose a side.",
+          "action": "release"
+        }
+      ]
+    }
+  ]
+}
