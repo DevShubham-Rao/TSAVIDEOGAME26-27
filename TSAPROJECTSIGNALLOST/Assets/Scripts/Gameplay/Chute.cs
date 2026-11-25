@@ -86,6 +86,33 @@ namespace SignalLost
             return d.magnitude <= CatchRadius;
         }
 
+        /// <summary>
+        /// Chute under the mouse, judged on SCREEN position: the chute's glowing rim vs where the cursor is.
+        /// The cursor lives on a plane above the ground, so a world-space test missed chutes that looked
+        /// hit. Picks the nearest rim inside the screen radius.
+        /// </summary>
+        public static Chute FindAtScreen(Vector2 pointer)
+        {
+            Camera cam = GameManager.I != null ? GameManager.I.Cam : null;
+            if (cam == null) return null;
+            Chute best = null;
+            float bestD = float.MaxValue;
+            foreach (Chute c in All)
+            {
+                if (c.IsHidden) continue;
+                Vector3 sp = cam.WorldToScreenPoint(c.Mouth);
+                if (sp.z < 0f) continue;
+                float radius = Screen.height * 0.075f * (c.CatchRadius / 0.8f) * (c.IsUniversal ? 1.4f : 1f);
+                float d = Vector2.Distance(pointer, new Vector2(sp.x, sp.y));
+                if (d <= radius && d < bestD)
+                {
+                    bestD = d;
+                    best = c;
+                }
+            }
+            return best;
+        }
+
         public static Chute FindAt(Vector3 planePoint)
         {
             Chute best = null;

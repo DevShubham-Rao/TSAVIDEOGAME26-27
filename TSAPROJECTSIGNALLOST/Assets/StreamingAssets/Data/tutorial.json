@@ -98,7 +98,7 @@
       "text": "That is the job. Pop, sweep, sort, crunch. Keep the Relay Chain open: the shift clock is running now.",
       "target": "clock",
       "wait_for": "seconds",
-      "count": 4,
+      "count": 9,
       "setup": {
         "disable": [
           "events"
@@ -187,7 +187,7 @@
     {
       "id": "wrong_chute",
       "trigger": "wrong_sort",
-      "text": "Wrong chute. Bits only go down the chute of their own color (Gold bits fit any chute).",
+      "text": "Those bits did not match that chute, so they spilled out. No harm, no lost combo: drop the rest in their own chute.",
       "target": "chutes",
       "duration": 7
     },

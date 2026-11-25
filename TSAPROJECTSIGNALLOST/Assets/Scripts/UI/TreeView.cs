@@ -531,6 +531,28 @@ namespace SignalLost
             return u.deep ? cost.ToString("0") + " ECHO" + (cost == 1 ? "" : "ES") : NumberFormat.Format(cost);
         }
 
+        /// <summary>What Antenna level n gives, read from the game data (blob types, events, story steps).</summary>
+        private static string AntennaDesc(int n)
+        {
+            BalanceData b = Balance.B;
+            System.Text.StringBuilder sb = new System.Text.StringBuilder("+50% to ALL Data you earn. ");
+            List<string> unlocks = new List<string>();
+            foreach (BlobTypeDef t in b.blobs)
+            {
+                if (t.id == "prism" || t.unlockAntenna != n || n == 0) continue;
+                string c = t.color.Substring(0, 1).ToUpperInvariant() + t.color.Substring(1);
+                unlocks.Add(c + " Static (" + t.bits + (t.bits == 1 ? " bit" : " bits") + (t.split > 0 ? ", splits when popped" : "") + ")");
+            }
+            if (n == b.days.goldenFromAntenna) unlocks.Add("Gold Static (rare, worth a pile of bits)");
+            if (n == b.mega.unlockAntenna) unlocks.Add("Mega Static (huge, splits into " + b.mega.splitCount + ")");
+            foreach (EventDef e in Balance.I.Events) if (e.unlockAntenna == n) unlocks.Add("the " + e.name + " event");
+            if (n == b.days.midpointAntenna) unlocks.Add("the midpoint story");
+            if (n >= b.endingAntennaLevel) unlocks.Add("the FINALE: the signal reaches 100%");
+            if (unlocks.Count > 0) sb.Append("Unlocks: " + string.Join(", ", unlocks) + ".");
+            else sb.Append("Signal +10%. The story moves on.");
+            return sb.ToString();
+        }
+
         private static string TierText(UpgradeDef u)
         {
             int us = u.id.LastIndexOf('_');
@@ -556,6 +578,15 @@ namespace SignalLost
             dDesc.text = u.desc;
             bool owned = SkillTree.I.Level(u.id) > 0;
             dRank.text = u.id == SkillTree.CenterId ? "" : TierText(u);
+            if (u.id.StartsWith("antenna_"))
+            {
+                // Antenna nodes are strong, so spell out exactly what they do.
+                int n = int.Parse(u.id.Substring(8));
+                dDesc.text = AntennaDesc(n);
+                double now = SkillTree.I.Stat("antenna_data_mult");
+                double next = owned ? now : SkillTree.I.StatPreview(u, "antenna_data_mult", 1);
+                dRank.text = (TierText(u) + "    All Data  x" + now.ToString("0.0#") + (owned ? "" : "  ->  x" + next.ToString("0.0#"))).Trim();
+            }
             dValue.text = u.id == SkillTree.CenterId ? "" : ValueText(u, owned);
             bool reach = SkillTree.I.IsReachable(u);
             bool unlock = SkillTree.I.MeetsUnlock(u);

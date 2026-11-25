@@ -114,7 +114,8 @@ namespace SignalLost
             AudioManager.PlayVaried("squish", 1.2f, 1.45f, 0.35f);
         }
 
-        public void End(Vector3 p)
+        /// <param name="byPointer">True for real player input: the chute is judged by the mouse position on screen.</param>
+        public void End(Vector3 p, bool byPointer = false)
         {
             cursor = p;
             Active = false;
@@ -123,21 +124,46 @@ namespace SignalLost
             if (Held.Count == 0) return;
 
             BalanceData b = Balance.B;
-            Chute chute = Chute.FindAt(p);
+            // Judge the chute by where the mouse is on screen first (what the player sees), then by the
+            // world point as a fallback.
+            Chute chute = null;
+            if (byPointer && InputReader.I != null) chute = Chute.FindAtScreen(InputReader.I.PointerPosition);
+            if (chute == null) chute = Chute.FindAt(p);
             List<Blob> flung = new List<Blob>(Held);
             Held.Clear();
 
             if (chute != null)
             {
-                // Sort: every bit in the tank goes into this chute. Wrong colors bounce back out.
+                // Sort: bits that match this chute go in. Other colors spill out beside it, untouched: no
+                // penalty and no lost combo, so a mixed tank can be dropped chute by chute.
                 AudioManager.Play("whoosh", 1.1f, 0.6f);
+                int fly = 0;
+                bool spilled = false;
                 for (int i = 0; i < flung.Count; i++)
                 {
                     Blob blob = flung[i];
-                    float dur = b.vacuum.flingDuration + i * 0.035f;
-                    Vector3 target = chute.Mouth + Random.insideUnitSphere * 0.12f;
-                    Chute c = chute;
-                    blob.FlyTo(target, dur, 1.1f, x => BlobActions.Sort(x, c, true));
+                    if (BlobActions.Matches(blob, chute))
+                    {
+                        float dur = b.vacuum.flingDuration + fly * 0.035f;
+                        fly++;
+                        Vector3 target = chute.Mouth + Random.insideUnitSphere * 0.12f;
+                        Chute c = chute;
+                        blob.FlyTo(target, dur, 1.1f, x => BlobActions.Sort(x, c, true));
+                    }
+                    else
+                    {
+                        spilled = true;
+                        blob.SetHeld(false);
+                        Vector3 scatter = Random.insideUnitSphere;
+                        scatter.y = 0f;
+                        blob.FlyTo(BlobSpawner.I.ClampToField(blob.Position + scatter.normalized * 0.9f), 0.3f, 0.5f, x => x.ReturnToDrift());
+                    }
+                }
+                if (spilled)
+                {
+                    chute.Fed(false);
+                    AudioManager.Play("sort_bonk", 1f, 0.35f);
+                    EventBus.RaiseSorted(false);
                 }
             }
             else

@@ -113,7 +113,7 @@ namespace SignalLost
             UIFactory.Place(walletText.rectTransform, UIFactory.TopRight, UIFactory.TopRight, new Vector2(-40f, -34f), new Vector2(560f, 56f));
 
             endingsText = UIFactory.Text(root, "Endings", "", 24f, Palette.Gold, TextAlignmentOptions.Left);
-            UIFactory.Place(endingsText.rectTransform, UIFactory.TopLeft, UIFactory.TopLeft, new Vector2(40f, -40f), new Vector2(480f, 34f));
+            UIFactory.Place(endingsText.rectTransform, UIFactory.TopLeft, UIFactory.TopLeft, new Vector2(40f, -208f), new Vector2(480f, 34f));
 
             BuildReport(root);
             BuildMail(root);

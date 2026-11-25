@@ -155,14 +155,39 @@ namespace SignalLost
             active.OnWarning();
             EventBus.RaiseEventStarted(def);
             yield return new WaitForSeconds(b.events.warningSeconds);
-            overlay.BeginPuzzle(def);
 
+            // Clear Channel Memory (the upgrade Hale's ending unlocks): the event still pops up, but Hale
+            // handles it. No puzzle to play; the reward still lands.
+            bool haleHandles = GameStats.EventsNeverFail;
+            if (haleHandles)
+            {
+                Color hale = Palette.Hex("#7FA8FF");
+                overlay.ShowWarning("CLEAR CHANNEL", hale);
+                AudioManager.Play("shield", 1f, 0.7f);
+                yield return new WaitForSeconds(0.9f);
+                overlay.Stamp("HALE HANDLES IT", hale);
+                AudioManager.Play("solved", 1.1f, 0.7f);
+                GameManager.I.Tracking.eventsSolved++;
+                ApplyReward(def);
+                yield return new WaitForSeconds(b.events.stampSeconds + 0.4f);
+                active.Cleanup();
+                overlay.Hide();
+                EventBus.RaiseEventEnded(def, true);
+                active = null;
+                Current = null;
+                Running = false;
+                timer = Random.Range(b.events.intervalMin, b.events.intervalMax);
+                SaveManager.I.RequestSave();
+                yield break;
+            }
+
+            overlay.BeginPuzzle(def);
             float limit = (float)(def.baseTime * GameStats.EventTimerMult);
             // First time this event shows up: Hale explains it, the timer is doubled, and it cannot fail.
             bool guided = TutorialDirector.I != null && TutorialDirector.I.BeginEventTip(def);
             if (guided) limit *= Balance.B.tutorial.firstEventTimeMult;
             yield return active.Play(limit);
-            bool success = active.Succeeded || guided || GameStats.EventsNeverFail;
+            bool success = active.Succeeded || guided;
 
             if (success)
             {

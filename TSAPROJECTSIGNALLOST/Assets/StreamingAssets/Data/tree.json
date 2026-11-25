@@ -1674,7 +1674,7 @@
  {
   "id": "antenna_1",
   "name": "Antenna I",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 0,
@@ -1709,7 +1709,7 @@
  {
   "id": "antenna_2",
   "name": "Antenna II",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 1,
@@ -1744,7 +1744,7 @@
  {
   "id": "antenna_3",
   "name": "Antenna III",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 2,
@@ -1779,7 +1779,7 @@
  {
   "id": "antenna_4",
   "name": "Antenna IV",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 3,
@@ -1814,7 +1814,7 @@
  {
   "id": "antenna_5",
   "name": "Antenna V",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 4,
@@ -1849,7 +1849,7 @@
  {
   "id": "antenna_6",
   "name": "Antenna VI",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 5,
@@ -1884,7 +1884,7 @@
  {
   "id": "antenna_7",
   "name": "Antenna VII",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 6,
@@ -1919,7 +1919,7 @@
  {
   "id": "antenna_8",
   "name": "Antenna VIII",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 7,
@@ -1954,7 +1954,7 @@
  {
   "id": "antenna_9",
   "name": "Antenna IX",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 8,
@@ -1989,7 +1989,7 @@
  {
   "id": "antenna_10",
   "name": "Antenna X",
-  "desc": "Boost the signal: +50% all Data and the next part of the story. Antenna 10 ends the run.",
+  "desc": "+50% to all Data, and new Static and events appear.",
   "branch": "signal",
   "col": -0.5,
   "row": 9,
@@ -2923,7 +2923,7 @@
  {
   "id": "memory_clear_channel",
   "name": "Clear Channel Memory",
-  "desc": "Puzzle events can no longer fail. Unlocked by Hale's ending.",
+  "desc": "Puzzle events still pop up, but Hale handles them: no puzzle to play, and the reward still lands. Unlocked by Hale's ending.",
   "branch": "deep",
   "col": -0.5,
   "row": 3,

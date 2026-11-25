@@ -68,9 +68,11 @@ namespace SignalLost
             arrow.anchorMin = arrow.anchorMax = UIFactory.Center;
             arrow.sizeDelta = new Vector2(56f, 56f);
 
-            Image box = UIFactory.Panel(root, "Comms", new Color(0.02f, 0.05f, 0.11f, 1f), Palette.Cyan, true);
+            // The box never blocks clicks (only its Skip button does), and it sits at the top-left, away from
+            // the chutes at the bottom and the mail reply buttons.
+            Image box = UIFactory.Panel(root, "Comms", new Color(0.02f, 0.05f, 0.11f, 1f), Palette.Cyan, false);
             comms = box.rectTransform;
-            UIFactory.Place(comms, UIFactory.BottomLeft, UIFactory.BottomLeft, new Vector2(196f, 24f), new Vector2(780f, 150f));
+            UIFactory.Place(comms, UIFactory.TopLeft, UIFactory.TopLeft, new Vector2(24f, -168f), new Vector2(780f, 150f));
             commsGroup = UIFactory.Group(box.gameObject);
             commsGroup.alpha = 0f;
             Image frame = UIFactory.Image(comms, "PortraitFrame", UISprites.Circle, new Color(0.1f, 0.16f, 0.32f, 1f), false);
@@ -243,6 +245,15 @@ namespace SignalLost
             rootGroup.alpha = Mathf.MoveTowards(rootGroup.alpha, visible ? 1f : 0f, dt * 6f);
             rootGroup.blocksRaycasts = visible;
             rootGroup.interactable = visible;
+
+            // Layout: under the HUD during a shift; a smaller box in the top-left corner on the end-of-day screen.
+            bool night = EndOfDayScreen.I != null && EndOfDayScreen.I.IsOpen;
+            Vector2 wantPos = night ? new Vector2(24f, -24f) : new Vector2(24f, -168f);
+            Vector2 wantSize = night ? new Vector2(450f, 176f) : new Vector2(780f, 150f);
+            comms.anchoredPosition = wantPos;
+            comms.sizeDelta = wantSize;
+            lineText.rectTransform.sizeDelta = new Vector2(wantSize.x - 160f, wantSize.y - 46f);
+            lineText.fontSizeMax = night ? 24f : 28f;
 
             // Comms box + typewriter (fast; never blocks input).
             commsGroup.alpha = Mathf.MoveTowards(commsGroup.alpha, commsVisible ? 1f : 0f, dt * 6f);

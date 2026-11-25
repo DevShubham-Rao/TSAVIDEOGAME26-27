@@ -28,6 +28,8 @@ namespace SignalLost
         private TextMeshProUGUI lineText;
         private Button skipButton;
         private bool skipRequested;
+        private bool advanceRequested;
+        private TextMeshProUGUI clickHint;
         private Coroutine running;
         private Action onDone;
 
@@ -47,6 +49,10 @@ namespace SignalLost
             RectTransform root = (RectTransform)transform;
             dark = UIFactory.Image(root, "Dark", UISprites.Square, new Color(0f, 0f, 0.02f, 0f), true);
             UIFactory.Stretch(dark.rectTransform);
+            // Click anywhere: finish the line, then go to the next shot.
+            Button clicker = dark.gameObject.AddComponent<Button>();
+            clicker.transition = Selectable.Transition.None;
+            clicker.onClick.AddListener(() => advanceRequested = true);
             flash = UIFactory.Image(root, "Flash", UISprites.Square, new Color(1f, 1f, 1f, 0f), false);
             UIFactory.Stretch(flash.rectTransform);
 
@@ -68,6 +74,9 @@ namespace SignalLost
             UIFactory.Place(lineText.rectTransform, UIFactory.TopLeft, UIFactory.TopLeft, new Vector2(118f, -38f), new Vector2(1180f, 72f));
             lineText.enableWordWrapping = true;
 
+            clickHint = UIFactory.Text(root, "ClickHint", "CLICK TO CONTINUE", 22f, Palette.TextSoft, TextAlignmentOptions.Right);
+            UIFactory.Place(clickHint.rectTransform, UIFactory.BottomRight, UIFactory.BottomRight, new Vector2(-40f, 20f), new Vector2(420f, 30f));
+            clickHint.gameObject.SetActive(false);
             skipButton = UIFactory.Button(root, "Skip", "SKIP  >", 24f, Skip, new Color(0.05f, 0.07f, 0.14f, 1f), Palette.Dim, Palette.TextSoft);
             UIFactory.Place((RectTransform)skipButton.transform, UIFactory.TopRight, UIFactory.TopRight, new Vector2(-28f, -28f), new Vector2(150f, 54f));
         }
@@ -118,6 +127,7 @@ namespace SignalLost
         {
             if (!IsPlaying || InputReader.I == null) return;
             if (InputReader.I.CancelPressed) Skip();
+            if (InputReader.I.SpacePressed) advanceRequested = true;
         }
 
         private IEnumerator Run(CutsceneDef def)
@@ -139,16 +149,35 @@ namespace SignalLost
                 ShowLine(shot.speaker, null);
                 float t = 0f;
                 string full = shot.line ?? "";
-                while (t < shot.seconds && !skipRequested)
+                advanceRequested = false;
+                clickHint.gameObject.SetActive(false);
+                while (!skipRequested)
                 {
                     t += Time.unscaledDeltaTime;
+                    bool typed = true;
                     if (full.Length > 0)
                     {
-                        int chars = Mathf.Min(full.Length, Mathf.FloorToInt(t * 45f));
+                        int chars = Mathf.Min(full.Length, Mathf.FloorToInt(t * 40f));
                         lineText.text = full.Substring(0, chars);
+                        typed = chars >= full.Length;
                     }
+                    if (advanceRequested)
+                    {
+                        advanceRequested = false;
+                        if (!typed)
+                        {
+                            // First click finishes the typing.
+                            t = full.Length / 40f + 0.01f;
+                            continue;
+                        }
+                        if (full.Length > 0 && t > 0.25f) break;
+                    }
+                    if (full.Length == 0 && t >= shot.seconds) break;
+                    clickHint.gameObject.SetActive(typed && full.Length > 0);
+                    if (typed && full.Length > 0) clickHint.alpha = 0.55f + 0.45f * Mathf.Sin(Time.unscaledTime * 4f);
                     yield return null;
                 }
+                clickHint.gameObject.SetActive(false);
                 lineText.text = full;
             }
 

@@ -543,8 +543,9 @@ namespace SignalLost
             ComboTracker ct = ComboTracker.I;
             int combo = ct.Combo;
             Color cc = ComboColor(combo);
-            comboFill.fillAmount = ct.TimeLeft01;
-            comboFill.color = cc;
+            // Coyote time: once the bar is empty the combo lives on for a moment; show a flickering sliver.
+            comboFill.fillAmount = ct.InGrace ? 0.04f + 0.04f * Mathf.Sin(Time.unscaledTime * 20f) : ct.TimeLeft01;
+            comboFill.color = ct.InGrace ? new Color(cc.r, cc.g, cc.b, 0.5f + 0.5f * Mathf.Sin(Time.unscaledTime * 20f)) : cc;
             comboMultText.text = "x" + ct.Mult.ToString("0.00");
             comboMultText.color = cc;
             comboCountText.text = "COMBO " + combo;

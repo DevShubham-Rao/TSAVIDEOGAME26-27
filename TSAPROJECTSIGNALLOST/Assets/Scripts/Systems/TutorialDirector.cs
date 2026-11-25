@@ -308,7 +308,8 @@ namespace SignalLost
             if (s.setup != null && s.setup.compressorCapacity > 0 && Compressor.I != null) Compressor.I.CapacityOverride = 0;
             if (!data.completed.Contains(s.id)) data.completed.Add(s.id);
             if (SaveManager.I != null) SaveManager.I.RequestSave();
-            stepDoneTimer = string.IsNullOrEmpty(s.praise) ? 0.4f : cfg.praiseSeconds;
+            // Time to read the praise line (it often carries the lore): about 14 characters a second.
+            stepDoneTimer = string.IsNullOrEmpty(s.praise) ? 0.4f : Mathf.Clamp(s.praise.Length / 14f + 1.2f, cfg.praiseSeconds, 8f);
         }
 
         /// <summary>The shift part (or the night part) of the tutorial is done.</summary>
@@ -695,6 +696,7 @@ namespace SignalLost
                 // The clock waits while a tip is held back by another popup, so it is not missed.
                 if (TipAllowedNow(activeTip)) tipClock += dt;
                 float duration = activeTip.duration > 0f ? activeTip.duration : cfg.tipSeconds;
+                duration = Mathf.Max(duration, activeTip.text.Length / 13f + 2.5f);
                 if (ui != null)
                 {
                     bool has = ResolveTarget(activeTip.target, 0f, out Vector2 screen, out float radius) && TipAllowedNow(activeTip);

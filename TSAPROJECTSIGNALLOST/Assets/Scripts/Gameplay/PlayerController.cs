@@ -64,7 +64,7 @@ namespace SignalLost
                 if (toggle && vac.Active)
                 {
                     // Toggle mode: the second right-click drops the tank.
-                    vac.End(lastPlanePoint);
+                    vac.End(lastPlanePoint, true);
                     suckHeld = false;
                 }
                 else
@@ -87,7 +87,7 @@ namespace SignalLost
             if (suckHeld && (input.SecondaryReleasedThisFrame || !input.SecondaryIsPressed))
             {
                 suckHeld = false;
-                if (vac.Active) vac.End(lastPlanePoint);
+                if (vac.Active) vac.End(lastPlanePoint, true);
             }
         }
 

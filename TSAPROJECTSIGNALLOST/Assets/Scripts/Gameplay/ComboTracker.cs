@@ -23,6 +23,15 @@ namespace SignalLost
 
         public float Window { get { return GameStats.ComboWindow; } }
 
+        /// <summary>
+        /// Coyote time: the bar runs empty after Window seconds, but the combo itself lives a little longer,
+        /// so a near-miss on a chute or a slow sweep does not cost the streak.
+        /// </summary>
+        public float Grace { get { return Balance.B.combo.grace; } }
+
+        /// <summary>True when the bar is empty but the combo is still alive.</summary>
+        public bool InGrace { get { return Combo > 0 && Time.time - lastAction > Window; } }
+
         public float Mult
         {
             get { return Mathf.Min(1f + Combo * Balance.B.combo.step, GameStats.ComboCap); }
@@ -40,7 +49,7 @@ namespace SignalLost
 
         public void Register()
         {
-            if (Combo > 0 && Time.time - lastAction > Window) Combo = 0;
+            if (Combo > 0 && Time.time - lastAction > Window + Grace) Combo = 0;
             Combo++;
             lastAction = Time.time;
             if (GameManager.I != null && Combo > GameManager.I.Tracking.bestCombo) GameManager.I.Tracking.bestCombo = Combo;
@@ -80,7 +89,7 @@ namespace SignalLost
             // QTE combo freeze: while an event runs the window does not tick down, so a forced QTE never
             // costs you the streak. The timer resumes where it left off when the event ends.
             if (Frozen && Combo > 0) lastAction += Time.deltaTime;
-            if (Combo > 0 && Time.time - lastAction > Window)
+            if (Combo > 0 && Time.time - lastAction > Window + Grace)
             {
                 Combo = 0;
                 EventBus.RaiseComboChanged(0, 1f);

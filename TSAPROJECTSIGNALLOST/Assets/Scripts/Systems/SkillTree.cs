@@ -75,6 +75,14 @@ namespace SignalLost
             return false;
         }
 
+        /// <summary>Debug / tests: grants a Deep Signal node without paying for it.</summary>
+        public void DebugGrantDeep(string id)
+        {
+            deepLevels[id] = 1;
+            cacheDirty = true;
+            EventBus.RaiseUpgradeBought("debug", 0);
+        }
+
         /// <summary>Debug menu: owns every node, except the last Antenna levels (they end the run).</summary>
         public void DebugOwnAll()
         {

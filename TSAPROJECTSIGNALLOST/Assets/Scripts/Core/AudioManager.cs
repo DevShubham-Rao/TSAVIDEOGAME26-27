@@ -23,6 +23,9 @@ namespace SignalLost
         private readonly Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
         private readonly List<AudioSource> voices = new List<AudioSource>();
         private int nextVoice;
+        private readonly Dictionary<string, Vector2> keyWindows = new Dictionary<string, Vector2>();
+        private float globalWindowStart;
+        private int globalThisWindow;
         private AudioSource vacuumSource;
         private AudioSource hissSource;
         private AudioSource musicSource;
@@ -176,6 +179,22 @@ namespace SignalLost
                 if (coinsThisWindow >= limit) return;
                 coinsThisWindow++;
             }
+
+            // Voice limiter: late game fires hundreds of sounds a second. Per sound, at most 3 start within
+            // 0.1 s (repeats get quieter), and across all sounds at most 10 start within 0.1 s.
+            float now = Time.unscaledTime;
+            if (now - globalWindowStart > 0.1f)
+            {
+                globalWindowStart = now;
+                globalThisWindow = 0;
+            }
+            if (globalThisWindow >= 10) return;
+            int keyCount = 0;
+            if (keyWindows.TryGetValue(key, out Vector2 kw) && now - kw.x <= 0.1f) keyCount = (int)kw.y;
+            if (keyCount >= 3) return;
+            keyWindows[key] = keyCount == 0 ? new Vector2(now, 1f) : new Vector2(kw.x, keyCount + 1);
+            globalThisWindow++;
+            volume *= 1f / (1f + 0.3f * keyCount);
 
             AudioSource v = null;
             for (int i = 0; i < voices.Count; i++)

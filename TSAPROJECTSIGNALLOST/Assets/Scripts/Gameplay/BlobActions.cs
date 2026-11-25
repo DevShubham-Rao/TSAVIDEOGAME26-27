@@ -209,7 +209,7 @@ namespace SignalLost
             }
             else
             {
-                if (byPlayer) ComboTracker.I.ResetCombo();
+                // A wrong chute never costs the combo.
                 chute.Fed(false);
                 AudioManager.Play("sort_bonk");
                 EventBus.RaiseSorted(false);

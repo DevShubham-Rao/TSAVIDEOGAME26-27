@@ -95,6 +95,8 @@ namespace SignalLost
     public class ComboConfig
     {
         public float window = 1.5f;
+        /// <summary>Extra seconds the combo survives after the bar is empty (coyote time).</summary>
+        public float grace = 0.8f;
         public float step = 0.05f;
         public float cap = 5f;
         public List<int> milestones = new List<int> { 10, 25, 50, 80 };
